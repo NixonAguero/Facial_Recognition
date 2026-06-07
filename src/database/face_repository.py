@@ -1,0 +1,153 @@
+from typing import Any
+
+from utils.supabase_client import supabase
+
+
+
+
+
+def create_profile(full_name: str, external_code: str | None = None) -> dict[str, Any]:
+    """
+    Creates a new person/profile in Supabase.
+    """
+
+    data = {
+        "full_name": full_name,
+        "external_code": external_code,
+    }
+
+    response = supabase.table("profiles").insert(data).execute()
+
+    if not response.data:
+        raise RuntimeError("Profile could not be created.")
+
+    return response.data[0]
+
+
+def save_face_embedding(
+    profile_id: str,
+    embedding: list[float],
+    image_id: str | None = None,
+    model_name: str = "arcface",
+    model_version: str = "insightface-buffalo_l",
+) -> dict[str, Any]:
+    """
+    Saves a face embedding linked to a profile.
+    """
+
+    if len(embedding) != 512:
+        raise ValueError(f"Expected 512 dimensions, got {len(embedding)}")
+
+    data = {
+        "profile_id": profile_id,
+        "image_id": image_id,
+        "embedding": embedding,
+        "model_name": model_name,
+        "model_version": model_version,
+    }
+
+    response = supabase.table("face_embeddings").insert(data).execute()
+
+    if not response.data:
+        raise RuntimeError("Face embedding could not be saved.")
+
+    return response.data[0]
+
+
+def match_face_embedding(
+    embedding: list[float],
+    match_count: int = 5,
+    threshold: float = 0.40,
+) -> dict[str, Any]:
+    """
+    Searches for the closest face embedding in Supabase.
+    Returns match result with accepted/rejected decision.
+    """
+
+    if len(embedding) != 512:
+        raise ValueError(f"Expected 512 dimensions, got {len(embedding)}")
+
+    response = supabase.rpc("match_face_embedding", {
+        "query_embedding": embedding,
+        "match_count": match_count,
+    }).execute()
+
+    matches = response.data or []
+
+    if not matches:
+        return {
+            "matched": False,
+            "reason": "No candidates found.",
+            "best_match": None,
+            "matches": [],
+        }
+
+    best_match = matches[0]
+    distance = best_match["distance"]
+
+    return {
+        "matched": distance <= threshold,
+        "distance": distance,
+        "threshold": threshold,
+        "best_match": best_match,
+        "matches": matches,
+    }
+def get_or_create_profile(full_name: str, external_code: str) -> dict:
+    """
+    Gets an existing profile by external_code.
+    If it does not exist, creates it.
+    """
+
+    existing_profile = get_profile_by_external_code(external_code)
+
+    if existing_profile:
+        return existing_profile
+
+    return create_profile(
+        full_name=full_name,
+        external_code=external_code
+    )
+
+
+
+def get_profile_by_external_code(external_code: str):
+    """
+    Finds a profile by external_code.
+    Returns the profile if it exists, otherwise None.
+    """
+
+    response = (
+        supabase
+        .table("profiles")
+        .select("*")
+        .eq("external_code", external_code)
+        .limit(1)
+        .execute()
+    )
+
+    if response.data:
+        return response.data[0]
+
+    return None
+
+def save_face_image(
+    profile_id: str,
+    image_path: str,
+    image_type: str | None = None,
+) -> dict:
+    """
+    Saves image metadata in the face_images table.
+    """
+
+    data = {
+        "profile_id": profile_id,
+        "image_path": image_path,
+        "image_type": image_type,
+    }
+
+    response = supabase.table("face_images").insert(data).execute()
+
+    if not response.data:
+        raise RuntimeError("Face image metadata could not be saved.")
+
+    return response.data[0]
