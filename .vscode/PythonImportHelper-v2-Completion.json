@@ -1,0 +1,1263 @@
+[
+    {
+        "label": "runpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "runpy",
+        "description": "runpy",
+        "detail": "runpy",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "DataLoader",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "TensorDataset",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "random_split",
+        "importPath": "torch.utils.data",
+        "description": "torch.utils.data",
+        "isExtraImport": true,
+        "detail": "torch.utils.data",
+        "documentation": {}
+    },
+    {
+        "label": "FacialAutoencoder",
+        "importPath": "src.engine.autoencoder",
+        "description": "src.engine.autoencoder",
+        "isExtraImport": true,
+        "detail": "src.engine.autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "FacialAutoencoder",
+        "importPath": "src.engine.autoencoder",
+        "description": "src.engine.autoencoder",
+        "isExtraImport": true,
+        "detail": "src.engine.autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "YOLOv8Face",
+        "importPath": "src.engine.YOLOv8face",
+        "description": "src.engine.YOLOv8face",
+        "isExtraImport": true,
+        "detail": "src.engine.YOLOv8face",
+        "documentation": {}
+    },
+    {
+        "label": "YOLOv8Face",
+        "importPath": "src.engine.YOLOv8face",
+        "description": "src.engine.YOLOv8face",
+        "isExtraImport": true,
+        "detail": "src.engine.YOLOv8face",
+        "documentation": {}
+    },
+    {
+        "label": "YOLOv8Face",
+        "importPath": "src.engine.YOLOv8face",
+        "description": "src.engine.YOLOv8face",
+        "isExtraImport": true,
+        "detail": "src.engine.YOLOv8face",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "supabase",
+        "importPath": "utils.supabase_client",
+        "description": "utils.supabase_client",
+        "isExtraImport": true,
+        "detail": "utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "supabase",
+        "importPath": "utils.supabase_client",
+        "description": "utils.supabase_client",
+        "isExtraImport": true,
+        "detail": "utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "supabase",
+        "importPath": "utils.supabase_client",
+        "description": "utils.supabase_client",
+        "isExtraImport": true,
+        "detail": "utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "supabase",
+        "importPath": "utils.supabase_client",
+        "description": "utils.supabase_client",
+        "isExtraImport": true,
+        "detail": "utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "FaceAnalysis",
+        "importPath": "insightface.app",
+        "description": "insightface.app",
+        "isExtraImport": true,
+        "detail": "insightface.app",
+        "documentation": {}
+    },
+    {
+        "label": "YOLO",
+        "importPath": "ultralytics",
+        "description": "ultralytics",
+        "isExtraImport": true,
+        "detail": "ultralytics",
+        "documentation": {}
+    },
+    {
+        "label": "match_face_embedding",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_or_create_profile",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_image",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_embedding",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "match_face_embedding",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_or_create_profile",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_image",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_embedding",
+        "importPath": "database.face_repository",
+        "description": "database.face_repository",
+        "isExtraImport": true,
+        "detail": "database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "importPath": "engine.arcface_embedder",
+        "description": "engine.arcface_embedder",
+        "isExtraImport": true,
+        "detail": "engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "importPath": "engine.arcface_embedder",
+        "description": "engine.arcface_embedder",
+        "isExtraImport": true,
+        "detail": "engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "importPath": "engine.arcface_embedder",
+        "description": "engine.arcface_embedder",
+        "isExtraImport": true,
+        "detail": "engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "importPath": "engine.arcface_embedder",
+        "description": "engine.arcface_embedder",
+        "isExtraImport": true,
+        "detail": "engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "importPath": "engine.arcface_embedder",
+        "description": "engine.arcface_embedder",
+        "isExtraImport": true,
+        "detail": "engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "upload_face_image",
+        "importPath": "database.storage_repository",
+        "description": "database.storage_repository",
+        "isExtraImport": true,
+        "detail": "database.storage_repository",
+        "documentation": {}
+    },
+    {
+        "label": "upload_face_image",
+        "importPath": "database.storage_repository",
+        "description": "database.storage_repository",
+        "isExtraImport": true,
+        "detail": "database.storage_repository",
+        "documentation": {}
+    },
+    {
+        "label": "print_match_results",
+        "importPath": "utils.debug_prints",
+        "description": "utils.debug_prints",
+        "isExtraImport": true,
+        "detail": "utils.debug_prints",
+        "documentation": {}
+    },
+    {
+        "label": "register_face",
+        "importPath": "pipelines.register_face_pipeline",
+        "description": "pipelines.register_face_pipeline",
+        "isExtraImport": true,
+        "detail": "pipelines.register_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "identify_face",
+        "importPath": "pipelines.identify_face_pipeline",
+        "description": "pipelines.identify_face_pipeline",
+        "isExtraImport": true,
+        "detail": "pipelines.identify_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "create_client",
+        "importPath": "supabase",
+        "description": "supabase",
+        "isExtraImport": true,
+        "detail": "supabase",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "supabase",
+        "description": "supabase",
+        "isExtraImport": true,
+        "detail": "supabase",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "isExtraImport": true,
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify",
+        "importPath": "src.api",
+        "description": "src.api",
+        "isExtraImport": true,
+        "detail": "src.api",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "importPath": "src.api",
+        "description": "src.api",
+        "isExtraImport": true,
+        "detail": "src.api",
+        "documentation": {}
+    },
+    {
+        "label": "asynccontextmanager",
+        "importPath": "contextlib",
+        "description": "contextlib",
+        "isExtraImport": true,
+        "detail": "contextlib",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_PATH",
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "isExtraImport": true,
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "isExtraImport": true,
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"facial-recognition\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"facial-recognition\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"facial-recognition\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"facial-recognition\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"facial-recognition\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def parse_args() -> argparse.Namespace:\n    parser = argparse.ArgumentParser(\n        description=\"Entrena el autoencoder de deteccion de anomalias faciales.\"\n    )\n    parser.add_argument(\n        \"--embeddings_path\", type=str, required=True,\n        help=\"Ruta al .npy con embeddings L2-normalizados de ArcFace. Shape: (N, 512).\"\n    )\n    parser.add_argument(\n        \"--output_path\", type=str, default=\"models/autoencoder.pt\",",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "load_embeddings",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def load_embeddings(path: str) -> torch.Tensor:\n    \"\"\"Carga y valida los embeddings desde un archivo .npy.\"\"\"\n    if not os.path.isfile(path):\n        raise FileNotFoundError(f\"No se encontró el archivo de embeddings: {path}\")\n    embeddings = np.load(path).astype(np.float32)\n    if embeddings.ndim != 2 or embeddings.shape[1] != FacialAutoencoder.INPUT_DIM:\n        raise ValueError(\n            f\"Se esperaba shape (N, {FacialAutoencoder.INPUT_DIM}), \"\n            f\"se obtuvo {embeddings.shape}\"\n        )",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "build_dataloaders",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def build_dataloaders(\n    embeddings: torch.Tensor,\n    val_split: float,\n    batch_size: int\n) -> tuple[DataLoader, DataLoader]:\n    \"\"\"Divide en train/val y crea DataLoaders.\"\"\"\n    dataset   = TensorDataset(embeddings)\n    n_val     = int(len(dataset) * val_split)\n    n_train   = len(dataset) - n_val\n    train_set, val_set = random_split(",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "train_epoch",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def train_epoch(\n    model: FacialAutoencoder,\n    loader: DataLoader,\n    optimizer: torch.optim.Optimizer,\n    criterion: nn.Module,\n    device: torch.device\n) -> float:\n    \"\"\"Una epoca de entrenamiento. Devuelve la perdida promedio.\"\"\"\n    model.train()\n    total_loss = 0.0",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "validate_epoch",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def validate_epoch(\n    model: FacialAutoencoder,\n    loader: DataLoader,\n    criterion: nn.Module,\n    device: torch.device\n) -> tuple[float, np.ndarray]:\n    \"\"\"\n    Una epoca de validacion.\n    Returns:\n        (pérdida_promedio, array_de_mse_por_muestra)",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "calibrate_threshold",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def calibrate_threshold(val_mse: np.ndarray, percentile: float) -> float:\n    \"\"\"\n    Calcula el umbral tau como el percentil P del MSE sobre datos de validacion.\n    Lógica: si el P95 del MSE de rostros genuinos es X, entonces cualquier\n    embedding con MSE > X esta fuera de la distribucion de genuinos -> anomalia.\n    Args:\n        val_mse:    Array de MSE por muestra sobre el conjunto de validacion.\n        percentile: Percentil deseado (típicamente 95.0).\n    Returns:\n        Umbral escalar tau.",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "save_checkpoint",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def save_checkpoint(\n    model: FacialAutoencoder,\n    threshold: float,\n    output_path: str,\n    train_loss: float,\n    val_loss: float,\n    epoch: int\n) -> None:\n    \"\"\"Guarda el estado del modelo y metadatos de entrenamiento.\"\"\"\n    os.makedirs(os.path.dirname(output_path) or \".\", exist_ok=True)",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.train_autoencoder",
+        "description": "scripts.train_autoencoder",
+        "peekOfCode": "def main():\n    args   = parse_args()\n    device = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n    print(f\"\\n{'='*55}\")\n    print(f\"  Entrenamiento del Autoencoder Facial\")\n    print(f\"  Device: {device}\")\n    print(f\"{'='*55}\\n\")\n    # 1. Datos\n    print(\"[1/4] Cargando embeddings...\")\n    embeddings                 = load_embeddings(args.embeddings_path)",
+        "detail": "scripts.train_autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "set_detector",
+        "kind": 2,
+        "importPath": "src.api.register",
+        "description": "src.api.register",
+        "peekOfCode": "def set_detector(d: YOLOv8Face) -> None:\n    global detector\n    detector = d\ndef register_user(args):\n    print(\"Registering user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/register\")\nasync def register(file: UploadFile = File(...)):\n    raw_bytes = await file.read()\n    if not raw_bytes:",
+        "detail": "src.api.register",
+        "documentation": {}
+    },
+    {
+        "label": "register_user",
+        "kind": 2,
+        "importPath": "src.api.register",
+        "description": "src.api.register",
+        "peekOfCode": "def register_user(args):\n    print(\"Registering user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/register\")\nasync def register(file: UploadFile = File(...)):\n    raw_bytes = await file.read()\n    if not raw_bytes:\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,\n                            detail=\"Archivo vacío.\")\n    image = YOLOv8Face.decode_image(raw_bytes)",
+        "detail": "src.api.register",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "src.api.register",
+        "description": "src.api.register",
+        "peekOfCode": "router = APIRouter()\ndetector: YOLOv8Face | None = None\ndef set_detector(d: YOLOv8Face) -> None:\n    global detector\n    detector = d\ndef register_user(args):\n    print(\"Registering user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/register\")\nasync def register(file: UploadFile = File(...)):",
+        "detail": "src.api.register",
+        "documentation": {}
+    },
+    {
+        "label": "set_detector",
+        "kind": 2,
+        "importPath": "src.api.verify",
+        "description": "src.api.verify",
+        "peekOfCode": "def set_detector(d: YOLOv8Face) -> None:\n    global detector\n    detector = d\ndef verify_user(args):\n    print(\"Verifying user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/verify\")\nasync def verify(file: UploadFile = File(...)):\n    raw_bytes = await file.read()\n    if not raw_bytes:",
+        "detail": "src.api.verify",
+        "documentation": {}
+    },
+    {
+        "label": "verify_user",
+        "kind": 2,
+        "importPath": "src.api.verify",
+        "description": "src.api.verify",
+        "peekOfCode": "def verify_user(args):\n    print(\"Verifying user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/verify\")\nasync def verify(file: UploadFile = File(...)):\n    raw_bytes = await file.read()\n    if not raw_bytes:\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,\n                            detail=\"Archivo vacío.\")\n    image = YOLOv8Face.decode_image(raw_bytes)",
+        "detail": "src.api.verify",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "src.api.verify",
+        "description": "src.api.verify",
+        "peekOfCode": "router = APIRouter()\ndetector: YOLOv8Face | None = None\ndef set_detector(d: YOLOv8Face) -> None:\n    global detector\n    detector = d\ndef verify_user(args):\n    print(\"Verifying user...\")\n    print(f\"Method: {args.method}\")\n@router.post(\"/verify\")\nasync def verify(file: UploadFile = File(...)):",
+        "detail": "src.api.verify",
+        "documentation": {}
+    },
+    {
+        "label": "create_profile",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def create_profile(full_name: str, external_code: str | None = None) -> dict[str, Any]:\n    \"\"\"\n    Creates a new person/profile in Supabase.\n    \"\"\"\n    data = {\n        \"full_name\": full_name,\n        \"external_code\": external_code,\n    }\n    response = supabase.table(\"profiles\").insert(data).execute()\n    if not response.data:",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_embedding",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def save_face_embedding(\n    profile_id: str,\n    embedding: list[float],\n    image_id: str | None = None,\n    model_name: str = \"arcface\",\n    model_version: str = \"insightface-buffalo_l\",\n) -> dict[str, Any]:\n    \"\"\"\n    Saves a face embedding linked to a profile.\n    \"\"\"",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "match_face_embedding",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def match_face_embedding(\n    embedding: list[float],\n    match_count: int = 5,\n    threshold: float = 0.40,\n) -> dict[str, Any]:\n    \"\"\"\n    Searches for the closest face embedding in Supabase.\n    Returns match result with accepted/rejected decision.\n    \"\"\"\n    if len(embedding) != 512:",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_or_create_profile",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def get_or_create_profile(full_name: str, external_code: str) -> dict:\n    \"\"\"\n    Gets an existing profile by external_code.\n    If it does not exist, creates it.\n    \"\"\"\n    existing_profile = get_profile_by_external_code(external_code)\n    if existing_profile:\n        return existing_profile\n    return create_profile(\n        full_name=full_name,",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_profile_by_external_code",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def get_profile_by_external_code(external_code: str):\n    \"\"\"\n    Finds a profile by external_code.\n    Returns the profile if it exists, otherwise None.\n    \"\"\"\n    response = (\n        supabase\n        .table(\"profiles\")\n        .select(\"*\")\n        .eq(\"external_code\", external_code)",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "save_face_image",
+        "kind": 2,
+        "importPath": "src.database.face_repository",
+        "description": "src.database.face_repository",
+        "peekOfCode": "def save_face_image(\n    profile_id: str,\n    image_path: str,\n    image_type: str | None = None,\n) -> dict:\n    \"\"\"\n    Saves image metadata in the face_images table.\n    \"\"\"\n    data = {\n        \"profile_id\": profile_id,",
+        "detail": "src.database.face_repository",
+        "documentation": {}
+    },
+    {
+        "label": "upload_face_image",
+        "kind": 2,
+        "importPath": "src.database.storage_repository",
+        "description": "src.database.storage_repository",
+        "peekOfCode": "def upload_face_image(profile_id: str, image_path: str) -> str:\n     \"\"\"\n    Uploads a face image to Supabase Storage and returns the storage path.\n    \"\"\"\n     path = Path(image_path) # Convierte string a objeto Path\n     if not path.exists():\n           raise FileNotFoundError(f\"Image not found: {image_path}\")\n     file_extension = path.suffix.lower() \n        # Si image_path = \"user0.png\" → file_extension = \".png\"\n        # Si image_path = \"user0.JPG\" → file_extension = \".jpg\"",
+        "detail": "src.database.storage_repository",
+        "documentation": {}
+    },
+    {
+        "label": "BUCKET_NAME",
+        "kind": 5,
+        "importPath": "src.database.storage_repository",
+        "description": "src.database.storage_repository",
+        "peekOfCode": "BUCKET_NAME = os.getenv(\"SUPABASE_BUCKET\", \"face-images\")\n# Parámetros:\n    #   profile_id: ID del usuario (ej: \"c278e83c\")\n    #   image_path: Ruta local de la imagen (ej: \"dataset/sign_up/user0.png\")\n    # Retorna: Ruta guardada en Supabase (ej: \"profiles/c278e83c/abc123.png\")\ndef upload_face_image(profile_id: str, image_path: str) -> str:\n     \"\"\"\n    Uploads a face image to Supabase Storage and returns the storage path.\n    \"\"\"\n     path = Path(image_path) # Convierte string a objeto Path",
+        "detail": "src.database.storage_repository",
+        "documentation": {}
+    },
+    {
+        "label": "AnomalyDetector",
+        "kind": 6,
+        "importPath": "src.engine.anomaly_detector",
+        "description": "src.engine.anomaly_detector",
+        "peekOfCode": "class AnomalyDetector:\n    \"\"\"\n    Interfaz de inferencia del autoencoder para detección de anomalías.\n    Atributos:\n        model      (FacialAutoencoder): Red neuronal cargada.\n        threshold  (float):            Umbral MSE sobre el cual se declara anomalía.\n        device     (torch.device):     CPU o CUDA.\n    \"\"\"\n    # Umbral por defecto conservador.\n    # Debe reemplazarse con el valor calibrado por calibrate_threshold.py.",
+        "detail": "src.engine.anomaly_detector",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embedding",
+        "kind": 2,
+        "importPath": "src.engine.arcface_embedder",
+        "description": "src.engine.arcface_embedder",
+        "peekOfCode": "def generate_embedding(image_path: str) -> np.ndarray:\n    \"\"\"\n    Generates a 512-dimensional face embedding using InsightFace / ArcFace.\n    Args:\n        image_path: Path to the image file.\n    Returns:\n        np.ndarray: 512-dimensional embedding.\n    Raises:\n        FileNotFoundError: If image does not exist.\n        ValueError: If image cannot be read or no face is detected.",
+        "detail": "src.engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "_app",
+        "kind": 5,
+        "importPath": "src.engine.arcface_embedder",
+        "description": "src.engine.arcface_embedder",
+        "peekOfCode": "_app = FaceAnalysis(name=\"buffalo_l\")\n_app.prepare(ctx_id=-1)\ndef generate_embedding(image_path: str) -> np.ndarray:\n    \"\"\"\n    Generates a 512-dimensional face embedding using InsightFace / ArcFace.\n    Args:\n        image_path: Path to the image file.\n    Returns:\n        np.ndarray: 512-dimensional embedding.\n    Raises:",
+        "detail": "src.engine.arcface_embedder",
+        "documentation": {}
+    },
+    {
+        "label": "FacialAutoencoder",
+        "kind": 6,
+        "importPath": "src.engine.autoencoder",
+        "description": "src.engine.autoencoder",
+        "peekOfCode": "class FacialAutoencoder(nn.Module):\n    \"\"\"\n    Autoencoder simétrico sobre embeddings de ArcFace (512-d).\n    Atributos:\n        encoder (nn.Sequential): Reduce 512-d al espacio latente de 64-d.\n        decoder (nn.Sequential): Reconstruye 512-d desde el espacio latente.\n    \"\"\"\n    INPUT_DIM  = 512\n    LATENT_DIM = 64\n    def __init__(self):",
+        "detail": "src.engine.autoencoder",
+        "documentation": {}
+    },
+    {
+        "label": "YOLOv8Face",
+        "kind": 6,
+        "importPath": "src.engine.YOLOv8face",
+        "description": "src.engine.YOLOv8face",
+        "peekOfCode": "class YOLOv8Face:\n    def __init__(\n        self,\n        model_path: str,\n        conf: float = 0.25,\n        iou: float = 0.45,\n        min_confidence: float = 0.5,\n        min_sharpness: float = 80.0,\n        min_bbox_area: float = 6400.0,\n        device: str = \"\",",
+        "detail": "src.engine.YOLOv8face",
+        "documentation": {}
+    },
+    {
+        "label": "embedding_to_list",
+        "kind": 2,
+        "importPath": "src.pipelines.identify_face_pipeline",
+        "description": "src.pipelines.identify_face_pipeline",
+        "peekOfCode": "def embedding_to_list(embedding):\n    if hasattr(embedding, \"tolist\"):\n        return embedding.tolist()\n    return embedding\ndef identify_face(\n    image_path: str,\n    threshold: float = 0.40,\n    match_count: int = 5,\n) -> dict:\n    \"\"\"",
+        "detail": "src.pipelines.identify_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "identify_face",
+        "kind": 2,
+        "importPath": "src.pipelines.identify_face_pipeline",
+        "description": "src.pipelines.identify_face_pipeline",
+        "peekOfCode": "def identify_face(\n    image_path: str,\n    threshold: float = 0.40,\n    match_count: int = 5,\n) -> dict:\n    \"\"\"\n    Complete face identification flow:\n    1. Generate ArcFace embedding\n    2. Search closest embeddings in Supabase\n    3. Return match result",
+        "detail": "src.pipelines.identify_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "embedding_to_list",
+        "kind": 2,
+        "importPath": "src.pipelines.register_face_pipeline",
+        "description": "src.pipelines.register_face_pipeline",
+        "peekOfCode": "def embedding_to_list(embedding):\n    if hasattr(embedding, \"tolist\"):\n        return embedding.tolist()\n    return embedding\ndef register_face(\n    full_name: str,\n    external_code: str,\n    image_path: str,\n    image_type: str = \"sign_up\",\n) -> dict:",
+        "detail": "src.pipelines.register_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "register_face",
+        "kind": 2,
+        "importPath": "src.pipelines.register_face_pipeline",
+        "description": "src.pipelines.register_face_pipeline",
+        "peekOfCode": "def register_face(\n    full_name: str,\n    external_code: str,\n    image_path: str,\n    image_type: str = \"sign_up\",\n) -> dict:\n    \"\"\"\n    Complete face registration flow:\n    1. Get or create profile\n    2. Upload image to Supabase Storage",
+        "detail": "src.pipelines.register_face_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "PROFILE_ID",
+        "kind": 5,
+        "importPath": "src.test.test_insert_arcface_embedding",
+        "description": "src.test.test_insert_arcface_embedding",
+        "peekOfCode": "PROFILE_ID = \"c278e83c-c1b8-460b-b1ee-79412e7f36df\"\nfrom pathlib import Path\nIMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user0.png\"\nembedding = generate_embedding(str(IMAGE_PATH))\nif hasattr(embedding, \"tolist\"):\n    embedding = embedding.tolist()\nprint(\"Embedding length:\", len(embedding))\nif len(embedding) != 512:\n    raise ValueError(f\"Expected 512 dimensions, got {len(embedding)}\")\nresponse = supabase.table(\"face_embeddings\").insert({",
+        "detail": "src.test.test_insert_arcface_embedding",
+        "documentation": {}
+    },
+    {
+        "label": "IMAGE_PATH",
+        "kind": 5,
+        "importPath": "src.test.test_insert_arcface_embedding",
+        "description": "src.test.test_insert_arcface_embedding",
+        "peekOfCode": "IMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user0.png\"\nembedding = generate_embedding(str(IMAGE_PATH))\nif hasattr(embedding, \"tolist\"):\n    embedding = embedding.tolist()\nprint(\"Embedding length:\", len(embedding))\nif len(embedding) != 512:\n    raise ValueError(f\"Expected 512 dimensions, got {len(embedding)}\")\nresponse = supabase.table(\"face_embeddings\").insert({\n    \"profile_id\": PROFILE_ID,\n    \"embedding\": embedding,",
+        "detail": "src.test.test_insert_arcface_embedding",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "src.test.test_insert_arcface_embedding",
+        "description": "src.test.test_insert_arcface_embedding",
+        "peekOfCode": "embedding = generate_embedding(str(IMAGE_PATH))\nif hasattr(embedding, \"tolist\"):\n    embedding = embedding.tolist()\nprint(\"Embedding length:\", len(embedding))\nif len(embedding) != 512:\n    raise ValueError(f\"Expected 512 dimensions, got {len(embedding)}\")\nresponse = supabase.table(\"face_embeddings\").insert({\n    \"profile_id\": PROFILE_ID,\n    \"embedding\": embedding,\n    \"model_name\": \"arcface\",",
+        "detail": "src.test.test_insert_arcface_embedding",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "src.test.test_insert_arcface_embedding",
+        "description": "src.test.test_insert_arcface_embedding",
+        "peekOfCode": "response = supabase.table(\"face_embeddings\").insert({\n    \"profile_id\": PROFILE_ID,\n    \"embedding\": embedding,\n    \"model_name\": \"arcface\",\n    \"model_version\": \"insightface-buffalo_l\"\n}).execute()\nprint(response.data)",
+        "detail": "src.test.test_insert_arcface_embedding",
+        "documentation": {}
+    },
+    {
+        "label": "embedding_to_list",
+        "kind": 2,
+        "importPath": "src.test.test_login_face_flow",
+        "description": "src.test.test_login_face_flow",
+        "peekOfCode": "def embedding_to_list(embedding):\n    if hasattr(embedding, \"tolist\"):\n        return embedding.tolist()\n    return embedding\nLOGIN_IMAGE = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_in\" / \"user0.png\"\nprint(\"Generating login embedding...\")\nembedding = generate_embedding(str(LOGIN_IMAGE))\nembedding = embedding_to_list(embedding)\nprint(\"Searching for match...\")\nresult = match_face_embedding(",
+        "detail": "src.test.test_login_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_IMAGE",
+        "kind": 5,
+        "importPath": "src.test.test_login_face_flow",
+        "description": "src.test.test_login_face_flow",
+        "peekOfCode": "LOGIN_IMAGE = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_in\" / \"user0.png\"\nprint(\"Generating login embedding...\")\nembedding = generate_embedding(str(LOGIN_IMAGE))\nembedding = embedding_to_list(embedding)\nprint(\"Searching for match...\")\nresult = match_face_embedding(\n    embedding=embedding,\n    match_count=5,\n    threshold=0.40,\n)",
+        "detail": "src.test.test_login_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "src.test.test_login_face_flow",
+        "description": "src.test.test_login_face_flow",
+        "peekOfCode": "embedding = generate_embedding(str(LOGIN_IMAGE))\nembedding = embedding_to_list(embedding)\nprint(\"Searching for match...\")\nresult = match_face_embedding(\n    embedding=embedding,\n    match_count=5,\n    threshold=0.40,\n)\nprint_match_results(result)",
+        "detail": "src.test.test_login_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "src.test.test_login_face_flow",
+        "description": "src.test.test_login_face_flow",
+        "peekOfCode": "embedding = embedding_to_list(embedding)\nprint(\"Searching for match...\")\nresult = match_face_embedding(\n    embedding=embedding,\n    match_count=5,\n    threshold=0.40,\n)\nprint_match_results(result)",
+        "detail": "src.test.test_login_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "src.test.test_login_face_flow",
+        "description": "src.test.test_login_face_flow",
+        "peekOfCode": "result = match_face_embedding(\n    embedding=embedding,\n    match_count=5,\n    threshold=0.40,\n)\nprint_match_results(result)",
+        "detail": "src.test.test_login_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "SIGN_UP_IMAGE",
+        "kind": 5,
+        "importPath": "src.test.test_pipelines",
+        "description": "src.test.test_pipelines",
+        "peekOfCode": "SIGN_UP_IMAGE = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user3.png\"\nLOGIN_IMAGE = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_in\" / \"user0.png\"\nprint(\"Registering face...\")\nregistration_result = register_face(\n    full_name=\"Test User 0\",\n    external_code=\"TEST_USER_0\",\n    image_path=str(SIGN_UP_IMAGE),\n)\nprint(\"Registration completed.\")\nprint(\"Profile ID:\", registration_result[\"profile\"][\"id\"])",
+        "detail": "src.test.test_pipelines",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_IMAGE",
+        "kind": 5,
+        "importPath": "src.test.test_pipelines",
+        "description": "src.test.test_pipelines",
+        "peekOfCode": "LOGIN_IMAGE = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_in\" / \"user0.png\"\nprint(\"Registering face...\")\nregistration_result = register_face(\n    full_name=\"Test User 0\",\n    external_code=\"TEST_USER_0\",\n    image_path=str(SIGN_UP_IMAGE),\n)\nprint(\"Registration completed.\")\nprint(\"Profile ID:\", registration_result[\"profile\"][\"id\"])\nprint(\"Image ID:\", registration_result[\"face_image\"][\"id\"])",
+        "detail": "src.test.test_pipelines",
+        "documentation": {}
+    },
+    {
+        "label": "registration_result",
+        "kind": 5,
+        "importPath": "src.test.test_pipelines",
+        "description": "src.test.test_pipelines",
+        "peekOfCode": "registration_result = register_face(\n    full_name=\"Test User 0\",\n    external_code=\"TEST_USER_0\",\n    image_path=str(SIGN_UP_IMAGE),\n)\nprint(\"Registration completed.\")\nprint(\"Profile ID:\", registration_result[\"profile\"][\"id\"])\nprint(\"Image ID:\", registration_result[\"face_image\"][\"id\"])\nprint(\"Embedding ID:\", registration_result[\"face_embedding\"][\"id\"])\nprint(\"\\nIdentifying face...\")",
+        "detail": "src.test.test_pipelines",
+        "documentation": {}
+    },
+    {
+        "label": "identification_result",
+        "kind": 5,
+        "importPath": "src.test.test_pipelines",
+        "description": "src.test.test_pipelines",
+        "peekOfCode": "identification_result = identify_face(\n    image_path=str(LOGIN_IMAGE),\n    threshold=0.40,\n)\nprint(\"Identification result:\")\nprint(identification_result)\nif identification_result[\"matched\"]:\n    print(\"Access accepted.\")\n    print(\"Matched profile:\", identification_result[\"best_match\"][\"full_name\"])\n    print(\"Distance:\", identification_result[\"distance\"])",
+        "detail": "src.test.test_pipelines",
+        "documentation": {}
+    },
+    {
+        "label": "embedding_to_list",
+        "kind": 2,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "def embedding_to_list(embedding):\n    if hasattr(embedding, \"tolist\"):\n        return embedding.tolist()\n    return embedding\nPROFILE_NAME = \"Mujer rubian\"\nEXTERNAL_CODE = \"TEST_USER_3\"\nIMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user3.png\"\nprint(\"Getting or creating profile...\")\nprofile = get_or_create_profile(\n    full_name=PROFILE_NAME,",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "PROFILE_NAME",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "PROFILE_NAME = \"Mujer rubian\"\nEXTERNAL_CODE = \"TEST_USER_3\"\nIMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user3.png\"\nprint(\"Getting or creating profile...\")\nprofile = get_or_create_profile(\n    full_name=PROFILE_NAME,\n    external_code=EXTERNAL_CODE,\n)\nprint(\"Profile:\", profile[\"id\"])\nprint(\"Uploading image to Supabase Storage...\")",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "EXTERNAL_CODE",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "EXTERNAL_CODE = \"TEST_USER_3\"\nIMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user3.png\"\nprint(\"Getting or creating profile...\")\nprofile = get_or_create_profile(\n    full_name=PROFILE_NAME,\n    external_code=EXTERNAL_CODE,\n)\nprint(\"Profile:\", profile[\"id\"])\nprint(\"Uploading image to Supabase Storage...\")\nstorage_path = upload_face_image(",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "IMAGE_PATH",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "IMAGE_PATH = Path(__file__).parent.parent.parent / \"dataset\" / \"sign_up\" / \"user3.png\"\nprint(\"Getting or creating profile...\")\nprofile = get_or_create_profile(\n    full_name=PROFILE_NAME,\n    external_code=EXTERNAL_CODE,\n)\nprint(\"Profile:\", profile[\"id\"])\nprint(\"Uploading image to Supabase Storage...\")\nstorage_path = upload_face_image(\n    profile_id=profile[\"id\"],",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "profile = get_or_create_profile(\n    full_name=PROFILE_NAME,\n    external_code=EXTERNAL_CODE,\n)\nprint(\"Profile:\", profile[\"id\"])\nprint(\"Uploading image to Supabase Storage...\")\nstorage_path = upload_face_image(\n    profile_id=profile[\"id\"],\n    image_path=str(IMAGE_PATH),\n)",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "storage_path",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "storage_path = upload_face_image(\n    profile_id=profile[\"id\"],\n    image_path=str(IMAGE_PATH),\n)\nprint(\"Image uploaded:\", storage_path)\nprint(\"Saving image metadata...\")\nface_image = save_face_image(\n    profile_id=profile[\"id\"],\n    image_path=storage_path,\n    image_type=\"sign_up\",",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "face_image",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "face_image = save_face_image(\n    profile_id=profile[\"id\"],\n    image_path=storage_path,\n    image_type=\"sign_up\",\n)\nprint(\"Face image saved:\", face_image[\"id\"])\nprint(\"Generating ArcFace embedding...\")\nembedding = generate_embedding(str(IMAGE_PATH))\nembedding = embedding_to_list(embedding)\nprint(\"Embedding length:\", len(embedding))",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "embedding = generate_embedding(str(IMAGE_PATH))\nembedding = embedding_to_list(embedding)\nprint(\"Embedding length:\", len(embedding))\nprint(\"Saving face embedding...\")\nface_embedding = save_face_embedding(\n    profile_id=profile[\"id\"],\n    image_id=face_image[\"id\"],\n    embedding=embedding,\n)\nprint(\"Face embedding saved:\", face_embedding[\"id\"])",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "embedding",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "embedding = embedding_to_list(embedding)\nprint(\"Embedding length:\", len(embedding))\nprint(\"Saving face embedding...\")\nface_embedding = save_face_embedding(\n    profile_id=profile[\"id\"],\n    image_id=face_image[\"id\"],\n    embedding=embedding,\n)\nprint(\"Face embedding saved:\", face_embedding[\"id\"])",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "face_embedding",
+        "kind": 5,
+        "importPath": "src.test.test_register_face_flow",
+        "description": "src.test.test_register_face_flow",
+        "peekOfCode": "face_embedding = save_face_embedding(\n    profile_id=profile[\"id\"],\n    image_id=face_image[\"id\"],\n    embedding=embedding,\n)\nprint(\"Face embedding saved:\", face_embedding[\"id\"])",
+        "detail": "src.test.test_register_face_flow",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "src.test.test_supabase_connection",
+        "description": "src.test.test_supabase_connection",
+        "peekOfCode": "response = supabase.table(\"profiles\").select(\"*\").limit(1).execute()\nprint(response.data)\nprint(\"Supabase connection test successful!\")",
+        "detail": "src.test.test_supabase_connection",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "src.utils.args",
+        "description": "src.utils.args",
+        "peekOfCode": "def parse_args():\n    parser = argparse.ArgumentParser(description='Facial Recognition System')\n    parser.add_argument('--action', type=str, required=True, choices=['sign-up', 'sign-in'], default='sign-in', help='Action to perform: sign-up or sign-in')\n    parser.add_argument('--method', type=str, required=True, choices=['hybrid', 'standard'], default='standard', help='Recognition method to use')\n    return parser.parse_args()",
+        "detail": "src.utils.args",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL_PATH",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "MODEL_PATH = \"models/yolov8n-face-lindevs.pt\"\nDEVICE = \"\"         # \"\" = autodetectar CPU/CUDA/MPS\n# Filtro de calidad\nMIN_CONFIDENCE = 0.5\nMIN_SHARPNESS = 80.0\nMIN_BBOX_AREA = 6400.0  # ~80×80 px\nSINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "DEVICE",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "DEVICE = \"\"         # \"\" = autodetectar CPU/CUDA/MPS\n# Filtro de calidad\nMIN_CONFIDENCE = 0.5\nMIN_SHARPNESS = 80.0\nMIN_BBOX_AREA = 6400.0  # ~80×80 px\nSINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_CONFIDENCE",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "MIN_CONFIDENCE = 0.5\nMIN_SHARPNESS = 80.0\nMIN_BBOX_AREA = 6400.0  # ~80×80 px\nSINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_SHARPNESS",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "MIN_SHARPNESS = 80.0\nMIN_BBOX_AREA = 6400.0  # ~80×80 px\nSINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "MIN_BBOX_AREA",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "MIN_BBOX_AREA = 6400.0  # ~80×80 px\nSINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "SINGIN",
+        "kind": 5,
+        "importPath": "src.utils.constants",
+        "description": "src.utils.constants",
+        "peekOfCode": "SINGIN = 'sign-in'",
+        "detail": "src.utils.constants",
+        "documentation": {}
+    },
+    {
+        "label": "print_match_results",
+        "kind": 2,
+        "importPath": "src.utils.debug_prints",
+        "description": "src.utils.debug_prints",
+        "peekOfCode": "def print_match_results(result: dict) -> None:\n    \"\"\"\n    Prints face matching results in a clear way for threshold calibration.\n    \"\"\"\n    print(\"\\n\" + \"=\" * 80)\n    print(\"FACE MATCHING RESULTS\")\n    print(\"=\" * 80)\n    print(f\"Matched:   {result.get('matched')}\")\n    print(f\"Threshold: {result.get('threshold')}\")\n    print(f\"Distance:  {result.get('distance')}\")",
+        "detail": "src.utils.debug_prints",
+        "documentation": {}
+    },
+    {
+        "label": "SUPABASE_URL",
+        "kind": 5,
+        "importPath": "src.utils.supabase_client",
+        "description": "src.utils.supabase_client",
+        "peekOfCode": "SUPABASE_URL = os.getenv(\"SUPABASE_URL\")\nSUPABASE_SECRET_KEY = os.getenv(\"SUPABASE_SECRET_KEY\")\nif not SUPABASE_URL:\n    raise ValueError(\"SUPABASE_URL is not set in the environment variables.\")\nif not SUPABASE_SECRET_KEY:\n    raise ValueError(\"SUPABASE_SECRET_KEY is not set in the environment variables.\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SECRET_KEY)",
+        "detail": "src.utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "SUPABASE_SECRET_KEY",
+        "kind": 5,
+        "importPath": "src.utils.supabase_client",
+        "description": "src.utils.supabase_client",
+        "peekOfCode": "SUPABASE_SECRET_KEY = os.getenv(\"SUPABASE_SECRET_KEY\")\nif not SUPABASE_URL:\n    raise ValueError(\"SUPABASE_URL is not set in the environment variables.\")\nif not SUPABASE_SECRET_KEY:\n    raise ValueError(\"SUPABASE_SECRET_KEY is not set in the environment variables.\")\nsupabase: Client = create_client(SUPABASE_URL, SUPABASE_SECRET_KEY)",
+        "detail": "src.utils.supabase_client",
+        "documentation": {}
+    },
+    {
+        "label": "health",
+        "kind": 2,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "def health():\n    return {\"status\": \"ok\"}\nif __name__ == '__main__':\n    args = args.parse_args()\n    if args.action == 'sign-up':\n        register.register_user(args)\n    elif args.action == 'sign-in':\n        verify.verify_user(args)",
+        "detail": "src.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.main",
+        "description": "src.main",
+        "peekOfCode": "app = FastAPI(title=\"Facial Recognition API\", lifespan=lifespan)\napp.include_router(verify.router, prefix=\"/api\")\napp.include_router(register.router, prefix=\"/api\")\n@app.get(\"/health\")\ndef health():\n    return {\"status\": \"ok\"}\nif __name__ == '__main__':\n    args = args.parse_args()\n    if args.action == 'sign-up':\n        register.register_user(args)",
+        "detail": "src.main",
+        "documentation": {}
+    }
+]
