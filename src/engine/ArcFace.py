@@ -1,4 +1,6 @@
-def generate_embedding(face_detected):
+from deepface import DeepFace
+
+def generate_arcface_embedding(face_detected):
 
     try:
 
@@ -22,7 +24,7 @@ def generate_embedding(face_detected):
             detector_backend = "skip"
         )
 
-        # Este es un ejemplo de lo que devolveria el metodo
+        # Este es un ejemplo de lo que devolveria el modelo
         # [
         #     {
         #         "embedding": [0.0142, -0.0531, 0.1102, ..., 0.0089],  # Lista de 512 números flotantes (Norma L2 = 1)
