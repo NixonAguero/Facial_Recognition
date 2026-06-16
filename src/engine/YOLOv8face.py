@@ -11,7 +11,7 @@ class YOLOv8Face:
         conf: float = 0.25,
         iou: float = 0.45,
         min_confidence: float = 0.5,
-        min_sharpness: float = 80.0,
+        min_sharpness: float = 30.0,
         min_bbox_area: float = 6400.0,
         device: str = "",
     ):
@@ -70,7 +70,7 @@ class YOLOv8Face:
 
             if sharpness < self.min_sharpness:
                 continue
-            if brightness < 40 or brightness > 220:
+            if brightness < 20 or brightness > 220:
                 continue
             if contrast < 20:
                 continue
@@ -98,10 +98,6 @@ class YOLOv8Face:
 
         detections.sort(key=lambda d: d["confidence"], reverse=True)
         return detections
-
-    def warmup(self) -> None:
-        dummy = np.zeros((640, 640, 3), dtype=np.uint8)
-        self.model(dummy, verbose=False)
 
     def _crop(self, image, x1, y1, x2, y2) -> np.ndarray:
         h, w = image.shape[:2]

@@ -1,0 +1,869 @@
+{
+  "metric": "cosine_distance",
+  "label_mode": "filename-prefix",
+  "dataset_path": "dataset\\test",
+  "identity_image_counts": {
+    "cristel": 4,
+    "dereck": 3,
+    "ian": 5,
+    "nixon": 3
+  },
+  "processed_images": 15,
+  "skipped_images": [
+    {
+      "identity": "dereck",
+      "image": "dereck3.png",
+      "reason": "No se detectó un rostro válido."
+    }
+  ],
+  "genuine_pair_count": 22,
+  "impostor_pair_count": 83,
+  "genuine_distances": [
+    0.7640325941487496,
+    0.760288545486106,
+    0.6963531807971183,
+    0.6160716951176978,
+    0.6935351724662453,
+    0.3929761517737287,
+    0.47552991426316105,
+    0.48029429419624214,
+    0.48910456372060884,
+    0.3859657757920558,
+    0.5386987500849044,
+    0.4266516336990078,
+    0.5359852308163887,
+    0.520761047237275,
+    0.31878318326524413,
+    0.3903168443466738,
+    0.5251652504929029,
+    0.6827452116033973,
+    0.43716725063513584,
+    0.3233601769933998,
+    0.4078217840714302,
+    0.4071364558698053
+  ],
+  "impostor_distances": [
+    0.9524189228507162,
+    0.9039211457381384,
+    0.7459818365330502,
+    0.8545623795038455,
+    0.8842835202876933,
+    0.9145028292183816,
+    0.9187165299804007,
+    1.0163211209415892,
+    0.7620807404313032,
+    0.9008414429829754,
+    0.7576780537645748,
+    0.8673843011827872,
+    0.7771916780464339,
+    0.8911335735878789,
+    0.9153681477725036,
+    0.9727439133805035,
+    0.9937168145748294,
+    0.9954636308731232,
+    0.9812834138163069,
+    0.8820933024111306,
+    0.9586155084648399,
+    0.8588416682400426,
+    0.9032788434424281,
+    0.6389480032903382,
+    0.8216958645335739,
+    0.942131877392643,
+    0.8639502422970029,
+    0.8938818443139882,
+    0.920736123671704,
+    0.9539611907199004,
+    0.7720441013963305,
+    0.8787001408070988,
+    0.7495567395565929,
+    0.8937798419101235,
+    0.6804710863518226,
+    0.7896210312768615,
+    0.9246648393580889,
+    0.8968784520541381,
+    0.8928586686568043,
+    0.9661392816468602,
+    0.9907627628952496,
+    0.8048612245355449,
+    1.0005365503647805,
+    0.8922518173195285,
+    0.8412327756889263,
+    0.860047877907471,
+    0.8308753049603328,
+    0.9130583912798065,
+    0.8671278437459838,
+    1.0769513541948361,
+    0.9798036072366377,
+    1.0156975439367695,
+    0.9858374183352341,
+    0.8770120710676482,
+    0.9209744875019259,
+    0.9211782093198394,
+    0.9248938863666074,
+    0.9681207735189458,
+    0.9131063084222959,
+    0.9654790648451239,
+    0.9050815872907682,
+    0.8134732333593025,
+    0.9054727122303421,
+    0.8714435697326612,
+    0.9735640141577905,
+    0.9434271580377549,
+    0.8238281743172373,
+    0.9115361750506384,
+    0.93449474833463,
+    0.893539829369687,
+    1.0344397948612003,
+    0.9296791026248615,
+    0.8580814303217094,
+    1.0052197594730716,
+    0.9336076391207553,
+    1.0768289058785137,
+    1.0961225097561114,
+    0.9287835257588115,
+    0.8388819702792062,
+    0.9433162731670033,
+    0.9213069635771459,
+    0.869690102305866,
+    1.0118978908648633
+  ],
+  "genuine_comparisons": [
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "cristel",
+      "image_b": "cristel2.png",
+      "distance": 0.7640325941487496
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "cristel",
+      "image_b": "cristel3.png",
+      "distance": 0.760288545486106
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "cristel",
+      "image_b": "cristel4.png",
+      "distance": 0.6963531807971183
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "cristel",
+      "image_b": "cristel3.png",
+      "distance": 0.6160716951176978
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "cristel",
+      "image_b": "cristel4.png",
+      "distance": 0.6935351724662453
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "cristel",
+      "image_b": "cristel4.png",
+      "distance": 0.3929761517737287
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "dereck",
+      "image_b": "dereck2.png",
+      "distance": 0.47552991426316105
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.48029429419624214
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.48910456372060884
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.3859657757920558
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.5386987500849044
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.4266516336990078
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.5359852308163887
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.520761047237275
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.31878318326524413
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.3903168443466738
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian3.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.5251652504929029
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian3.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.6827452116033973
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian4.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.43716725063513584
+    },
+    {
+      "identity_a": "nixon",
+      "image_a": "nixon1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.3233601769933998
+    },
+    {
+      "identity_a": "nixon",
+      "image_a": "nixon1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.4078217840714302
+    },
+    {
+      "identity_a": "nixon",
+      "image_a": "nixon2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.4071364558698053
+    }
+  ],
+  "impostor_comparisons": [
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "dereck",
+      "image_b": "dereck1.png",
+      "distance": 0.9524189228507162
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "dereck",
+      "image_b": "dereck2.png",
+      "distance": 0.9039211457381384
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.7459818365330502
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.8545623795038455
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.8842835202876933
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.9145028292183816
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.9187165299804007
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 1.0163211209415892
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.7620807404313032
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.9008414429829754
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.7576780537645748
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "dereck",
+      "image_b": "dereck1.png",
+      "distance": 0.8673843011827872
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "dereck",
+      "image_b": "dereck2.png",
+      "distance": 0.7771916780464339
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.8911335735878789
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.9153681477725036
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.9727439133805035
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.9937168145748294
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.9954636308731232
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.9812834138163069
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.8820933024111306
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.9586155084648399
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.8588416682400426
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "dereck",
+      "image_b": "dereck1.png",
+      "distance": 0.9032788434424281
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "dereck",
+      "image_b": "dereck2.png",
+      "distance": 0.6389480032903382
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.8216958645335739
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.942131877392643
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.8639502422970029
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.8938818443139882
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.920736123671704
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.9539611907199004
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.7720441013963305
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.8787001408070988
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.7495567395565929
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "dereck",
+      "image_b": "dereck1.png",
+      "distance": 0.8937798419101235
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "dereck",
+      "image_b": "dereck2.png",
+      "distance": 0.6804710863518226
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "dereck",
+      "image_b": "dereck4.png",
+      "distance": 0.7896210312768615
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.9246648393580889
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.8968784520541381
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.8928586686568043
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.9661392816468602
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.9907627628952496
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.8048612245355449
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 1.0005365503647805
+    },
+    {
+      "identity_a": "cristel",
+      "image_a": "cristel4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.8922518173195285
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.8412327756889263
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.860047877907471
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.8308753049603328
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.9130583912798065
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.8671278437459838
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 1.0769513541948361
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.9798036072366377
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 1.0156975439367695
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.9858374183352341
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.8770120710676482
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.9209744875019259
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.9211782093198394
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.9248938863666074
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9681207735189458
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.9131063084222959
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.9654790648451239
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "ian",
+      "image_b": "ian1.png",
+      "distance": 0.9050815872907682
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "ian",
+      "image_b": "ian2.png",
+      "distance": 0.8134732333593025
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "ian",
+      "image_b": "ian3.png",
+      "distance": 0.9054727122303421
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "ian",
+      "image_b": "ian4.png",
+      "distance": 0.8714435697326612
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "ian",
+      "image_b": "ian5.png",
+      "distance": 0.9735640141577905
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9434271580377549
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.8238281743172373
+    },
+    {
+      "identity_a": "dereck",
+      "image_a": "dereck4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.9115361750506384
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.93449474833463
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.893539829369687
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian1.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 1.0344397948612003
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9296791026248615
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.8580814303217094
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian2.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 1.0052197594730716
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9336076391207553
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 1.0768289058785137
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian3.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 1.0961225097561114
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9287835257588115
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.8388819702792062
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian4.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 0.9433162731670033
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian5.png",
+      "identity_b": "nixon",
+      "image_b": "nixon1.png",
+      "distance": 0.9213069635771459
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian5.png",
+      "identity_b": "nixon",
+      "image_b": "nixon2.png",
+      "distance": 0.869690102305866
+    },
+    {
+      "identity_a": "ian",
+      "image_a": "ian5.png",
+      "identity_b": "nixon",
+      "image_b": "nixon3.png",
+      "distance": 1.0118978908648633
+    }
+  ]
+}

@@ -1,36 +1,36 @@
-from fastapi import APIRouter, File, HTTPException, UploadFile, status
-from src.engine.YOLOv8face import YOLOv8Face
+from pathlib import Path
+from typing import Any
 
-router = APIRouter()
-detector: YOLOv8Face | None = None
+import cv2
 
-def set_detector(d: YOLOv8Face) -> None:
-    global detector
-    detector = d
+from src.pipelines import hybrid_pipeline, standard_pipeline
+from src.utils.logger import log
 
-def verify_user(args):
-    print("Verifying user...")
-    print(f"Method: {args.method}")
+from src.utils.constants import HYBRID
 
-@router.post("/verify")
-async def verify(file: UploadFile = File(...)):
-    raw_bytes = await file.read()
-    if not raw_bytes:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-                            detail="Archivo vacío.")
 
-    image = YOLOv8Face.decode_image(raw_bytes)
-    detections = detector.detect(image)
+def verify_user(
+    args: Any,
+    anomaly_detector: Any | None = None,
+) -> dict[str, Any]:
+    raw_path = (
+        args.image_path[0]
+        if isinstance(args.image_path, list)
+        else args.image_path
+    )
+    image_path = Path(raw_path)
+    log(f"Leyendo imagen de verificación: {image_path}")
+    image = cv2.imread(str(image_path))
 
-    return {
-        "total_detected": len(detections),
-        "faces": [
-            {
-                "bbox": d["bbox"],
-                "confidence": d["confidence"],
-                "sharpness": d["sharpness"],
-                "landmarks": d["landmarks"],
-            }
-            for d in detections
-        ],
-    }
+    if image is None:
+        raise ValueError("No se pudo leer la imagen.")
+
+    if args.method == HYBRID:
+        return hybrid_pipeline.sign_in(
+            image=image,
+            anomaly_detector=anomaly_detector,
+        )
+
+    return standard_pipeline.sign_in(
+        image=image,
+    )

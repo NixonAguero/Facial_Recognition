@@ -1,40 +1,44 @@
-from src.utils import args
-from src.api import verify, register
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from src.engine.YOLOv8face import YOLOv8Face
-from src.utils.constants import MODEL_PATH, DEVICE
+import json
+from pathlib import Path
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    detector = YOLOv8Face(model_path=MODEL_PATH, device=DEVICE)
-
-    print("Calentando YOLOv8...")
-    detector.warmup()
-    print("Modelo listo.")
-
-    verify.set_detector(detector)
-    register.set_detector(detector)
-
-    yield
-
-    print("Aplicación cerrada.")
+from src.api import register, verify
+from src.utils import args as cli_args
+from src.utils.constants import AUTOENCODER_MODEL_PATH, HYBRID, SINGUP
+from src.engine.anomaly_detector import AnomalyDetector
+from src.utils.logger import log
 
 
-app = FastAPI(title="Facial Recognition API", lifespan=lifespan)
+def run(args):
+    anomaly_detector = None
+    if args.method == HYBRID:
+        log("Cargando autoencoder...")
+        if not Path(AUTOENCODER_MODEL_PATH).is_file():
+            raise FileNotFoundError(
+                f"No se encontró el autoencoder: {AUTOENCODER_MODEL_PATH}"
+            )
 
-app.include_router(verify.router, prefix="/api")
-app.include_router(register.router, prefix="/api")
+        anomaly_detector = AnomalyDetector.load(AUTOENCODER_MODEL_PATH)
+        log("Autoencoder listo.")
+
+    if args.action == SINGUP:
+        return register.register_user(args, anomaly_detector)
+
+    return verify.verify_user(args, anomaly_detector)
 
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+def main():
+    args = cli_args.parse_args()
+    log(f"Iniciando {args.action} con pipeline {args.method}.")
 
-if __name__ == '__main__':
-    args = args.parse_args()
+    try:
+        result = run(args)
+    except Exception as error:
+        print(f"Error: {error}")
+        raise SystemExit(1) from None
 
-    if args.action == 'sign-up':
-        register.register_user(args)
-    elif args.action == 'sign-in':
-        verify.verify_user(args)
+    log("Proceso finalizado correctamente.")
+    print(json.dumps(result, indent=2, ensure_ascii=False, default=str))
+
+
+if __name__ == "__main__":
+    main()

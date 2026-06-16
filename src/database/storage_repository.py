@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 from uuid import uuid4
 
-from utils.supabase_client import supabase
+from src.utils.supabase_client import supabase
 
 BUCKET_NAME = os.getenv("SUPABASE_BUCKET", "face-images")
 # Parámetros:

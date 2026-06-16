@@ -9,7 +9,6 @@ colorama==0.4.6
 cryptography==48.0.0
 deepface==0.0.93
 deprecation==2.1.0
-fastapi==0.136.3
 filelock==3.29.1
 flatbuffers==25.12.19
 fsspec==2026.4.0
@@ -70,6 +69,5 @@ ultralytics==8.4.62
 ultralytics-thop==2.0.20
 umap-learn==0.5.7
 urllib3==2.7.0
-uvicorn==0.49.0
 websockets==15.0.1
 yarl==1.24.2

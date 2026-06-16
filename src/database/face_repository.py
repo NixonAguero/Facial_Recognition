@@ -1,6 +1,6 @@
 from typing import Any
 
-from utils.supabase_client import supabase
+from src.utils.supabase_client import supabase
 
 
 

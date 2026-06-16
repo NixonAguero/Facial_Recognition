@@ -1,42 +1,48 @@
-from fastapi import APIRouter, File, HTTPException, UploadFile, status
-from src.engine.YOLOv8face import YOLOv8Face
+from pathlib import Path
+from typing import Any
 
-router = APIRouter()
-detector: YOLOv8Face | None = None
+import cv2
 
-
-def set_detector(d: YOLOv8Face) -> None:
-    global detector
-    detector = d
+from src.pipelines import hybrid_pipeline, standard_pipeline
+from src.utils.constants import HYBRID
+from src.utils.logger import log
 
 
-def register_user(args):
-    print("Registering user...")
-    print(f"Method: {args.method}")
+def register_user(
+    args: Any,
+    anomaly_detector: Any | None = None,
+) -> dict[str, Any]:
+    raw_paths = (
+        args.image_path
+        if isinstance(args.image_path, list)
+        else [args.image_path]
+    )
+    image_paths = [Path(path) for path in raw_paths]
+    images = []
 
-@router.post("/register")
-async def register(file: UploadFile = File(...)):
-    raw_bytes = await file.read()
-    if not raw_bytes:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
-                            detail="Archivo vacío.")
+    for image_path in image_paths:
+        log(f"Leyendo imagen de registro: {image_path}")
+        image = cv2.imread(str(image_path))
 
-    image = YOLOv8Face.decode_image(raw_bytes)
-    detections = detector.detect(image)
+        if image is None:
+            raise ValueError(f"No se pudo leer la imagen: {image_path}")
 
-    if not detections:
-        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                            detail="No se detectó ningún rostro válido.")
+        images.append(image)
 
-    if len(detections) > 1:
-        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                            detail="Se detectaron múltiples rostros. Envía solo uno.")
+    if args.method == HYBRID:
+        return hybrid_pipeline.sign_up(
+            images=images,
+            filenames=[path.name for path in image_paths],
+            full_name=args.full_name,
+            external_code=args.external_code,
+            enrollment_strategy=args.enrollment_strategy,
+            anomaly_detector=anomaly_detector,
+        )
 
-    face = detections[0]
-
-    return {
-        "bbox": face["bbox"],
-        "confidence": face["confidence"],
-        "sharpness": face["sharpness"],
-        "landmarks": face["landmarks"],
-    }
+    return standard_pipeline.sign_up(
+        images=images,
+        filenames=[path.name for path in image_paths],
+        full_name=args.full_name,
+        external_code=args.external_code,
+        enrollment_strategy=args.enrollment_strategy,
+    )
