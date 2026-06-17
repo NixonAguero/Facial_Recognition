@@ -26,19 +26,19 @@ def assign_cluster(embedding: np.ndarray) -> tuple[int, float, list[dict]]:
     cluster_id = int(labels[0])
     probability = float(probabilities[0])
 
-    # Probabilidad de pertenencia a todos los clusters
-    # soft = hdbscan.membership_vector(clusterer, vector)[0]
-    # soft: array de shape (n_clusters,) con probabilidad por cluster
+    #Probabilidad de pertenencia a todos los clusters
+    soft = hdbscan.membership_vector(clusterer, vector)[0]
+    #soft: array de shape (n_clusters,) con probabilidad por cluster
 
-    # # Ordenar por probabilidad descendente y tomar top K
-    # top_indices = np.argsort(soft)[::-1][:TOP_K_CLUSTERS]
-    # top_clusters = [
-    #     {"cluster_id": int(i), "probability": float(soft[i])}
-    #     for i in top_indices
-    #     if soft[i] > 0.0  # ignorar clusters con probabilidad 0
-    # ]
+    # Fallback: si la probabilidad es baja, buscar en top K clusters
+    top_indices = np.argsort(soft)[::-1][:TOP_K_CLUSTERS]
+    top_clusters = [
+        {"cluster_id": int(i), "probability": float(soft[i])}
+        for i in top_indices
+        if soft[i] > 0.0  # ignorar clusters con probabilidad 0
+    ]
 
-    return cluster_id, probability
+    return cluster_id, probability, top_clusters
 
 def train_and_save_hdbscan(
     embeddings: np.ndarray,
@@ -53,10 +53,10 @@ def train_and_save_hdbscan(
 
     print("Fitting HDBSCAN...")
     clusterer = hdbscan.HDBSCAN(
-        min_cluster_size=MIN_CLUSTER_SIZE,
-        min_samples=3,
+        min_cluster_size=2,
+        min_samples=1,
         metric="euclidean",
-        cluster_selection_method="eom",
+        cluster_selection_method="leaf",
         prediction_data=True,
     )
 

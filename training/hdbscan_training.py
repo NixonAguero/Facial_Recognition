@@ -108,8 +108,10 @@ if __name__ == "__main__":
 
 # if __name__ == "__main__":
 
-#     images_to_register = get_image_paths(limite=500)
-    
+#     #images_to_register = get_image_paths(limite=500)
+
+#     images_to_register = ["dataset/test/nixon4.png", "dataset/test/cristel4.png", "dataset/test/dereck5.png", "dataset/test/ian2.png", "dataset/test/isma1.png"]
+
 #     print(f"Total a procesar: {len(images_to_register)}")
 
 #     for rel_path in images_to_register:

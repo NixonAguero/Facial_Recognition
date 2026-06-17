@@ -89,6 +89,46 @@ def match_face_embedding(
         "best_match": best_match,
         "matches": matches,
     }
+
+
+def match_face_embedding_by_cluster(
+    embedding: list[float],
+    cluster_id: int,
+    match_count: int = 5,
+    threshold: float = 0.40,
+) -> dict[str, Any]:
+
+    if len(embedding) != 512:
+        raise ValueError(f"Expected 512 dimensions, got {len(embedding)}")
+
+    response = supabase.rpc("match_face_embedding_by_cluster", {
+        "query_embedding": embedding,
+        "match_cluster_id": cluster_id,
+        "match_count": match_count,
+    }).execute()
+
+    matches = response.data or []
+
+    if not matches:
+        return {
+            "matched": False,
+            "reason": "No candidates found.",
+            "best_match": None,
+            "matches": [],
+        }
+
+    best_match = matches[0]
+    distance = best_match["distance"]
+
+    return {
+        "matched": distance <= threshold,
+        "distance": distance,
+        "threshold": threshold,
+        "best_match": best_match,
+        "matches": matches,
+    }
+
+
 def get_or_create_profile(full_name: str, external_code: str) -> dict:
     """
     Gets an existing profile by external_code.
