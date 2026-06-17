@@ -3,7 +3,6 @@ from typing import Any
 import cv2
 import numpy as np
 from deepface import DeepFace
-from deepface.modules.exceptions import FaceNotDetected
 
 from src.utils.constants import (
     MIN_CONFIDENCE,
@@ -23,7 +22,8 @@ def detect_faces(image: np.ndarray) -> list[dict[str, Any]]:
             color_face="bgr",
             normalize_face=True,
         )
-    except FaceNotDetected:
+    except Exception as e:
+        print(f"Error occurred while detecting faces: {e}")
         return []
 
     valid_faces = []
@@ -41,14 +41,19 @@ def detect_faces(image: np.ndarray) -> list[dict[str, Any]]:
         landmarks = get_landmarks(facial_area)
 
         if confidence < MIN_CONFIDENCE:
+            print(f"Flag 1: Confidence {confidence} below threshold {MIN_CONFIDENCE}")
             continue
         if sharpness < MIN_SHARPNESS:
+            print(f"Flag 2: Sharpness {sharpness} below threshold {MIN_SHARPNESS}")
             continue
         if brightness < 20 or brightness > 220:
+            print(f"Flag 3: Brightness {brightness} outside range [20, 220]")
             continue
         if contrast < 20:
+            print(f"Flag 4: Contrast {contrast} below threshold 20")
             continue
         if len(landmarks) != 5:
+            print(f"Flag 5: The image has {len(landmarks)} landmarks, expected 5, landmarks detected: {facial_area}")
             continue
 
         valid_faces.append(
@@ -86,6 +91,9 @@ def create_bbox(facial_area: dict[str, Any]) -> dict[str, float]:
 
 
 def get_landmarks(facial_area: dict[str, Any]) -> list[dict[str, Any]]:
+
+    print(f"Facial area landmarks: {facial_area}")
+
     landmark_names = (
         "right_eye",
         "left_eye",

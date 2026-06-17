@@ -3,9 +3,6 @@ from typing import Any
 from src.utils.supabase_client import supabase
 
 
-
-
-
 def create_profile(full_name: str, external_code: str | None = None) -> dict[str, Any]:
     """
     Creates a new person/profile in Supabase.
@@ -129,6 +126,28 @@ def get_profile_by_external_code(external_code: str):
         return response.data[0]
 
     return None
+
+def get_embeddings_registered():
+
+    response = (
+        supabase
+        .table("face_embeddings")
+        .select("id, embedding") 
+        .eq("is_active", True)
+        .execute()
+    )
+
+    if not response.data:
+        return None
+
+    return response.data
+
+def save_clusters(cluster_map):
+
+    for embedding_id, cluster_id in cluster_map.items():
+        supabase.table("face_embeddings").update(
+            {"cluster_id" : cluster_id}
+        ).eq("id", embedding_id).execute()
 
 def save_face_image(
     profile_id: str,

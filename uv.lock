@@ -399,7 +399,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "deepface", specifier = ">=0.0.93" },
+    { name = "deepface", specifier = ">=0.0.94" },
     { name = "insightface", specifier = ">=1.0.1" },
     { name = "joblib", specifier = ">=1.4.2" },
     { name = "numpy", specifier = ">=2.4.6" },
