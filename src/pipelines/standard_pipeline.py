@@ -18,7 +18,7 @@ from src.utils.normalizer import (
     calculate_embedding_centroid,
     l2_normalize_embedding,
 )
-
+from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 
 class FacePipelineError(RuntimeError):
     pass
@@ -157,6 +157,15 @@ def sign_up(
             )
 
         face = faces[0]
+
+        crop = face["crop"]
+
+        height, weight = crop.shape[:2]
+        if height < MIN_HEIGHT and weight < MIN_WIDTH:
+            print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
+            failed_detection += 1
+            return None
+
         embedding = generate_arcface_embedding(face["crop"])
 
         if embedding is None:
@@ -230,6 +239,14 @@ def sign_in(
         raise FacePipelineError("Se detecto mas de un rostro.")
 
     face = faces[0]
+    crop = face["crop"]
+
+    height, weight = crop.shape[:2]
+    if height < MIN_HEIGHT and weight < MIN_WIDTH:
+        print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
+        failed_detection += 1
+        return None
+
     embedding = generate_arcface_embedding(face["crop"])
 
     if embedding is None:

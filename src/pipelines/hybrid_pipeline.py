@@ -14,6 +14,7 @@ from src.utils.normalizer import (
     calculate_embedding_centroid,
     l2_normalize_embedding,
 )
+from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 
 
 class AnomalyDetectedError(FacePipelineError):
@@ -202,6 +203,18 @@ def sign_in(
     analysis = analyze_embedding(normalized_embedding, anomaly_detector)
     reduced_embedding = np.array(analysis["umap_embedding"])
     cluster_id, probability, top_clusters = assign_cluster(reduced_embedding)
+    height, weight = crop.shape[:2]
+    if height < MIN_HEIGHT and weight < MIN_WIDTH:
+        print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
+        failed_detection += 1
+        return None
+
+    embedding = generate_arcface_embedding(crop)
+    print(f"Embeggind producido: {embedding}")
+    embedding_normalized = l2_normalize_embedding(embedding)
+    print(f"Embedding normalizado {embedding_normalized}")
+    embedding_reduced = umap_reducer(embedding_normalized)
+    print(f"Embedding reducido {embedding_reduced}")
 
     effective_threshold = 0.40 if threshold is None else threshold
 

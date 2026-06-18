@@ -10,6 +10,7 @@ sys.path.append(PROJECT_ROOT)
 from src.engine.ArcFace import generate_arcface_embedding
 from src.engine.umap_reducer import train_and_save_umap
 from src.engine.RetinaFace import detect_faces
+from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 
 def get_best_face_crop(image_path: str) -> np.ndarray | None:
 
@@ -72,6 +73,12 @@ if __name__ == "__main__":
         crop = get_best_face_crop(image_path)
 
         if crop is None:
+            failed_detection += 1
+            continue
+
+        height, weight = crop.shape[:2]
+        if height < MIN_HEIGHT and weight < MIN_WIDTH:
+            print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
             failed_detection += 1
             continue
 
