@@ -12,6 +12,9 @@ from src.database.face_repository import (get_embeddings_registered, save_cluste
 from src.engine.umap_reducer import umap_reducer
 from src.engine.hdbscan import train_and_save_hdbscan
 import numpy as np
+from src.utils.normalizer import (
+    l2_normalize_embedding
+)
 
 def embedding_reducer(embeddings_to_reduce):
 
@@ -129,9 +132,11 @@ if __name__ == "__main__":
 #         embedding = generate_arcface_embedding(crop)
 #         if embedding is None:
 #             continue
+
+#        embedding_normalized = l2_normalize_embedding(embedding)
         
 #         # Convertir a lista para base de datos
-#         embedding_list = embedding.tolist() if hasattr(embedding, "tolist") else embedding
+#         embedding_list = embedding_normalized.tolist() if hasattr(embedding_normalized, "tolist") else embedding_normalized
 
 #         # 3. Registrar en base de datos
 #         profile = get_or_create_profile(full_name=file_name, external_code=file_name)

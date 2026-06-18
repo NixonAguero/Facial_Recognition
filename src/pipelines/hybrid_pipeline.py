@@ -12,6 +12,9 @@ import numpy as np
 from src.database.face_repository import (
     match_face_embedding_by_cluster
 )
+from src.utils.normalizer import (
+    l2_normalize_embedding
+)
 
 
 class AnomalyDetectedError(FacePipelineError):
@@ -98,7 +101,9 @@ def sign_in(
 
     embedding = generate_arcface_embedding(crop)
     print(f"Embeggind producido: {embedding}")
-    embedding_reduced = umap_reducer(embedding)
+    embedding_normalized = l2_normalize_embedding(embedding)
+    print(f"Embedding normalizado {embedding_normalized}")
+    embedding_reduced = umap_reducer(embedding_normalized)
     print(f"Embedding reducido {embedding_reduced}")
 
     embedding_reduced = np.array(embedding_reduced)
