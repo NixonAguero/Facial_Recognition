@@ -41,7 +41,12 @@ if __name__ == "__main__":
         sys.exit(1) 
 
     embedding_ids = [row["id"] for row in embeddings_registered]
-    embeddings_to_arrays = np.array([parse_embedding(row["embedding"]) for row in embeddings_registered])
+
+    embeddings_to_arrays = []
+    for embedding in embeddings_registered:
+        parsed = parse_embedding(embedding["embedding"])
+        normalized = l2_normalize_embedding(parsed)
+        embeddings_to_arrays.append(np.array(normalized))
 
     embeddings_reduced = embedding_reducer(embeddings_to_arrays)
     embeddings_reduced = np.array(embeddings_reduced)
