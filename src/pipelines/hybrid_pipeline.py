@@ -15,6 +15,7 @@ from src.database.face_repository import (
 from src.utils.normalizer import (
     l2_normalize_embedding
 )
+from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 
 
 class AnomalyDetectedError(FacePipelineError):
@@ -98,6 +99,12 @@ def sign_in(
 
     faces = detect_faces(image)
     crop = faces[0]["crop"]
+
+    height, weight = crop.shape[:2]
+    if height < MIN_HEIGHT and weight < MIN_WIDTH:
+        print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
+        failed_detection += 1
+        return None
 
     embedding = generate_arcface_embedding(crop)
     print(f"Embeggind producido: {embedding}")
