@@ -10,15 +10,15 @@ from src.utils.logger import log
 
 def run(args):
     anomaly_detector = None
-    #if args.method == HYBRID:
-        # log("Cargando autoencoder...")
-        # if not Path(AUTOENCODER_MODEL_PATH).is_file():
-        #     raise FileNotFoundError(
-        #         f"No se encontró el autoencoder: {AUTOENCODER_MODEL_PATH}"
-        #     )
+    if args.method == HYBRID:
+        log("Cargando autoencoder...")
+        if not Path(AUTOENCODER_MODEL_PATH).is_file():
+            raise FileNotFoundError(
+                f"No se encontro el autoencoder: {AUTOENCODER_MODEL_PATH}"
+            )
 
-        # anomaly_detector = AnomalyDetector.load(AUTOENCODER_MODEL_PATH)
-        # log("Autoencoder listo.")
+        anomaly_detector = AnomalyDetector.load(AUTOENCODER_MODEL_PATH)
+        log("Autoencoder listo.")
 
     if args.action == SINGUP:
         return register.register_user(args, anomaly_detector)
