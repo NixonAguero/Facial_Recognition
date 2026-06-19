@@ -4,7 +4,7 @@ Script de entrenamiento del autoencoder facial.
 Uso:
     python scripts/train_autoencoder.py \
         --embeddings_path data/registered_embeddings.npy \
-        --output_path     models/autoencoder.pt \
+        --output_path     weights/autoencoder.pt \
         --epochs          100 \
         --batch_size      32 \
         --lr              1e-3 \
@@ -52,7 +52,7 @@ def parse_args() -> argparse.Namespace:
         help="Ruta al .npy con embeddings L2-normalizados de ArcFace. Shape: (N, 512)."
     )
     parser.add_argument(
-        "--output_path", type=str, default="models/autoencoder.pt",
+        "--output_path", type=str, default="weights/autoencoder.pt",
         help="Dónde guardar el checkpoint con pesos y umbral."
     )
     parser.add_argument("--epochs",     type=int,   default=100)

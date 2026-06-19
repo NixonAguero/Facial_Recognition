@@ -1,5 +1,5 @@
 MODEL_PATH = "models/yolov8n-face-lindevs.pt"
-AUTOENCODER_MODEL_PATH = "models/autoencoder.pt"
+AUTOENCODER_MODEL_PATH = "weights/autoencoder.pt"
 DEVICE = ""         # "" = autodetectar CPU/CUDA/MPS
 
 #Pipeline
