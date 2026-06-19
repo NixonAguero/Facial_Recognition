@@ -1,5 +1,5 @@
 from typing import Any
-
+import time
 from src.utils.supabase_client import supabase
 
 
@@ -168,26 +168,54 @@ def get_profile_by_external_code(external_code: str):
     return None
 
 def get_embeddings_registered():
+    all_embeddings = []
+    page_size = 1000
+    offset = 0
 
-    response = (
-        supabase
-        .table("face_embeddings")
-        .select("id, embedding") 
-        .eq("is_active", True)
-        .execute()
-    )
+    while True:
+        response = (
+            supabase
+            .table("face_embeddings")
+            .select("id, embedding")
+            .eq("is_active", True)
+            .range(offset, offset + page_size - 1)
+            .execute()
+        )
 
-    if not response.data:
-        return None
+        if not response.data:
+            break
 
-    return response.data
+        all_embeddings.extend(response.data)
 
-def save_clusters(cluster_map):
+        if len(response.data) < page_size:
+            break
 
-    for embedding_id, cluster_id in cluster_map.items():
-        supabase.table("face_embeddings").update(
-            {"cluster_id" : cluster_id}
-        ).eq("id", embedding_id).execute()
+        offset += page_size
+
+    return all_embeddings if all_embeddings else None
+
+def save_clusters(cluster_map: dict):
+    BATCH_SIZE = 500  # 10,838 registros → 22 llamadas HTTP total
+    items = list(cluster_map.items())
+    total = len(items)
+
+    print(f"Guardando {total} clusters en {ceil(total / BATCH_SIZE)} lotes...")
+
+    for i in range(0, total, BATCH_SIZE):
+        batch = items[i:i + BATCH_SIZE]
+
+        rows = [
+            {"id": embedding_id, "cluster_id": cluster_id}
+            for embedding_id, cluster_id in batch
+        ]
+
+        supabase.table("face_embeddings") \
+            .upsert(rows, on_conflict="id") \
+            .execute()
+
+        print(f"Progreso: {min(i + BATCH_SIZE, total)}/{total}")
+
+    print("Clusters guardados correctamente.")
 
 def save_face_image(
     profile_id: str,

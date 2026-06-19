@@ -2,6 +2,8 @@ import os
 import sys
 from pathlib import Path
 import ast
+import umap
+import matplotlib.pyplot as plt
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
@@ -10,7 +12,7 @@ if PROJECT_ROOT not in sys.path:
 
 from src.database.face_repository import (get_embeddings_registered, save_clusters)
 from src.engine.umap_reducer import umap_reducer
-from src.engine.hdbscan import train_and_save_hdbscan
+from src.engine.hdbscan import (train_and_save_hdbscan, plot_hdbscan_clusters, print_hdbscan_stats)
 import numpy as np
 from src.utils.normalizer import (
     l2_normalize_embedding
@@ -33,6 +35,88 @@ def parse_embedding(emb):
         return ast.literal_eval(emb)
     return emb  
 
+def plot_raw_embeddings(embeddings_512d: np.ndarray, save_path: str | None = None):
+    """
+    Reduce los embeddings originales de 512d directamente a 2d con UMAP
+    para visualizar su distribución antes de cualquier procesamiento.
+
+    Args:
+        embeddings_512d: Array de shape (n_samples, 512).
+        save_path:       Ruta para guardar el gráfico. Si None, solo muestra.
+    """
+    n_samples = len(embeddings_512d)
+    print(f"Reduciendo {n_samples} embeddings de 512d → 2d para visualización...")
+
+    reducer_2d = umap.UMAP(
+        n_components=2,
+        metric="cosine",
+        n_neighbors=30,
+        min_dist=0.1,
+        random_state=42,
+        verbose=False,
+    )
+    embeddings_2d = reducer_2d.fit_transform(embeddings_512d)
+
+    plt.figure(figsize=(14, 10))
+    plt.scatter(
+        embeddings_2d[:, 0],
+        embeddings_2d[:, 1],
+        s=1,
+        alpha=0.3,
+        c="steelblue",
+    )
+    plt.title(f"Embeddings crudos desde DB — {n_samples} muestras (512d → 2d)")
+    plt.xlabel("UMAP 1")
+    plt.ylabel("UMAP 2")
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=150)
+        print(f"Gráfico guardado en: {save_path}")
+
+    plt.show()
+
+def plot_reduced_embeddings(embeddings_32d: np.ndarray, save_path: str | None = None):
+    """
+    Visualiza los embeddings ya reducidos a 32d por UMAP,
+    reduciéndolos a 2d para el gráfico.
+
+    Args:
+        embeddings_32d: Array de shape (n_samples, 32).
+        save_path:      Ruta para guardar el gráfico. Si None, solo muestra.
+    """
+    n_samples = len(embeddings_32d)
+    print(f"Reduciendo {n_samples} embeddings de 32d → 2d para visualización...")
+
+    reducer_2d = umap.UMAP(
+        n_components=2,
+        metric="euclidean",
+        n_neighbors=30,
+        min_dist=0.1,
+        random_state=42,
+        verbose=False,
+    )
+    embeddings_2d = reducer_2d.fit_transform(embeddings_32d)
+
+    plt.figure(figsize=(14, 10))
+    plt.scatter(
+        embeddings_2d[:, 0],
+        embeddings_2d[:, 1],
+        s=1,
+        alpha=0.3,
+        c="darkorange",
+    )
+    plt.title(f"Embeddings reducidos por UMAP — {n_samples} muestras (32d → 2d)")
+    plt.xlabel("UMAP 1")
+    plt.ylabel("UMAP 2")
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=150)
+        print(f"Gráfico guardado en: {save_path}")
+
+    plt.show()
+
 if __name__ == "__main__":
 
     embeddings_registered = get_embeddings_registered()
@@ -45,15 +129,22 @@ if __name__ == "__main__":
     embeddings_to_arrays = []
     for embedding in embeddings_registered:
         parsed = parse_embedding(embedding["embedding"])
-        normalized = l2_normalize_embedding(parsed)
-        embeddings_to_arrays.append(np.array(normalized))
+        embeddings_to_arrays.append(np.array(parsed))
+
+    plot_raw_embeddings(
+        embeddings_to_arrays,
+        save_path=os.path.join(PROJECT_ROOT, "raw_embeddings.png")
+    )
 
     embeddings_reduced = embedding_reducer(embeddings_to_arrays)
     embeddings_reduced = np.array(embeddings_reduced)
 
-    cluster_map = train_and_save_hdbscan(embeddings_reduced, embedding_ids) 
+    plot_reduced_embeddings(
+        embeddings_reduced,
+        save_path=os.path.join(PROJECT_ROOT, "distribucion_umap.png")
+    )
 
-    print("Updating cluster_id in database...")
+    cluster_map = train_and_save_hdbscan(embeddings_reduced, embedding_ids) 
 
     if not cluster_map:
         print("HDBSCAN training failed.")
@@ -61,106 +152,12 @@ if __name__ == "__main__":
 
     print(f"cluster map {cluster_map}")
 
+    print_hdbscan_stats()
+
+    plot_hdbscan_clusters(
+        embeddings_reduced,
+        save_path=os.path.join(PROJECT_ROOT, "clusters_hdbscan.png")
+    )
+
+    print("Updating cluster_id in database...")
     save_clusters(cluster_map)
-
-    
-
-# import cv2
-# from src.database.storage_repository import upload_face_image
-# from src.engine.RetinaFace import detect_faces
-# from src.engine.ArcFace import generate_arcface_embedding
-# from src.database.face_repository import (
-#     get_or_create_profile,
-#     save_face_image,
-#     save_face_embedding,
-# )
-
-# def get_best_face_crop(image_path: str) -> np.ndarray | None:
-
-#     print(f"Processing: {image_path}")
-#     image = cv2.imread(image_path)
-
-#     if image is None:
-#         print(f"  [ERROR] No se pudo leer: {image_path}")
-#         return None
-
-#     faces = detect_faces(image)
-
-#     print(f"  [FACES] Detectadas: {len(faces)}")
-
-#     if not faces:
-#         print(f"  [INFO] No se detectaron rostros válidos en: {image_path}")
-#         return None
-
-#     crop = faces[0]["crop"]
-#     print(f"  [CROP] Shape: {crop.shape}")
-
-#     return crop
-
-# def get_image_paths(limite: int = 500) -> list[str]:
-#     dataset_dir = Path(PROJECT_ROOT) / "dataset" / "img_align_celeba"
-
-#     if not dataset_dir.exists():
-#         sys.exit(1)
-
-#     extensions = ["*.jpg", "*.jpeg", "*.png"]
-#     images_paths = []
-
-#     for ext in extensions:
-#         for path in dataset_dir.rglob(ext):
-#             rel_path = path.relative_to(Path(PROJECT_ROOT))
-#             images_paths.append(str(rel_path))
-#             if len(images_paths) >= limite:
-#                 return images_paths
-#     return images_paths
-
-# if __name__ == "__main__":
-
-#     #images_to_register = get_image_paths(limite=500)
-
-#     images_to_register = ["dataset/test/nixon4.png", "dataset/test/cristel4.png", "dataset/test/dereck5.png", "dataset/test/ian2.png", "dataset/test/isma1.png"]
-
-#     print(f"Total a procesar: {len(images_to_register)}")
-
-#     for rel_path in images_to_register:
-#         # Usamos el nombre del archivo como nombre y código externo
-#         file_name = Path(rel_path).stem
-        
-#         print(f"\n--- Registrando: {file_name} ---")
-
-#         # 1. Procesar rostro
-#         crop = get_best_face_crop(rel_path)
-#         if crop is None:
-#             continue
-
-#         # 2. Generar embedding
-#         embedding = generate_arcface_embedding(crop)
-#         if embedding is None:
-#             continue
-
-#        embedding_normalized = l2_normalize_embedding(embedding)
-        
-#         # Convertir a lista para base de datos
-#         embedding_list = embedding_normalized.tolist() if hasattr(embedding_normalized, "tolist") else embedding_normalized
-
-#         # 3. Registrar en base de datos
-#         profile = get_or_create_profile(full_name=file_name, external_code=file_name)
-        
-#         # 4. Subir imagen a storage (asumiendo que quieres guardar la original)
-#         abs_path = os.path.join(PROJECT_ROOT, rel_path)
-#         storage_path = upload_face_image(profile_id=profile["id"], image_path=abs_path)
-        
-#         # 5. Guardar metadatos y embedding
-#         face_image = save_face_image(
-#             profile_id=profile["id"], 
-#             image_path=storage_path, 
-#             image_type="training"
-#         )
-        
-#         save_face_embedding(
-#             profile_id=profile["id"], 
-#             image_id=face_image["id"], 
-#             embedding=embedding_list
-#         )
-        
-#         print(f"Registro exitoso para: {file_name}")

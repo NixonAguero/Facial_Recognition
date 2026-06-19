@@ -2,6 +2,8 @@ import os
 import joblib
 import numpy as np
 from scipy.spatial.distance import cosine as scipy_cosine
+import umap
+import matplotlib.pyplot as plt
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 MODEL_PATH = os.path.join(PROJECT_ROOT, "weights", "umap_faces.joblib")
@@ -15,14 +17,6 @@ def _get_model():
     if _umap_model is None:
         model = joblib.load(MODEL_PATH)
 
-        # El modelo fue serializado con metric="cosine" en Colab (Python 3.10).
-        # umap.transform() no usa self.metric directamente — usa self._input_distance_func,
-        # que es pynn_named_distances["cosine"]: una función compilada con @numba.njit
-        # de pynndescent. Ese bytecode numba es incompatible con Python 3.13.
-        #
-        # Solución: reemplazar _input_distance_func por scipy.cosine, que tiene
-        # la misma firma (u, v) -> float y sklearn.pairwise_distances lo acepta
-        # sin invocar numba.
         model._input_distance_func = scipy_cosine
         model._metric_kwds = {}
 
@@ -80,3 +74,54 @@ def train_and_save_umap(historical_embeddings):
     print("UMAP Validation \n")
     vector_reduced = umap_reducer(historical_embeddings[0])
     print(f"UMAP results: \n embedding to reduce: \n{historical_embeddings[0]} \n new vector dimension {len(vector_reduced)} \n embedding reduced: \n {vector_reduced}")
+
+    save_path = os.path.join(PROJECT_ROOT, "distribucion_umap.png")
+    plot_umap_distribution(training_data, save_path=save_path)
+
+
+def plot_umap_distribution(embeddings_512d: np.ndarray, save_path: str | None = None):
+    """
+    Carga el modelo UMAP entrenado, reduce los embeddings de 512d a 32d,
+    luego los reduce a 2d para visualización y genera el gráfico.
+
+    Args:
+        embeddings_512d: Array de shape (n_samples, 512) — embeddings originales
+                         de ArcFace usados para entrenar UMAP.
+        save_path:       Ruta para guardar el gráfico. Si None, solo muestra.
+    """
+    umap_model = _get_model()
+
+    print("Reduciendo 512d → 32d con modelo UMAP entrenado...")
+    embeddings_32d = umap_model.transform(embeddings_512d)
+
+    print("Reduciendo 32d → 2d para visualización...")
+    reducer_2d = umap.UMAP(
+        n_components=2,
+        metric="euclidean",
+        n_neighbors=30,
+        min_dist=0.1,
+        random_state=42,
+        verbose=False,
+    )
+    embeddings_2d = reducer_2d.fit_transform(embeddings_32d)
+
+    n_samples = len(embeddings_512d)
+
+    plt.figure(figsize=(14, 10))
+    plt.scatter(
+        embeddings_2d[:, 0],
+        embeddings_2d[:, 1],
+        s=1,
+        alpha=0.3,
+        c="steelblue",
+    )
+    plt.title(f"Distribución UMAP — {n_samples} embeddings | {COMPONENTS_REDUCER}d → 2d")
+    plt.xlabel("UMAP 1")
+    plt.ylabel("UMAP 2")
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=150)
+        print(f"Gráfico guardado en: {save_path}")
+
+    plt.show()
