@@ -54,7 +54,7 @@ def save_face_embedding(
 def match_face_embedding(
     embedding: list[float],
     match_count: int = 5,
-    threshold: float = 0.40,
+    threshold: float = 0.50,
 ) -> dict[str, Any]:
     """
     Searches for the closest face embedding in Supabase.
@@ -95,7 +95,7 @@ def match_face_embedding_by_cluster(
     embedding: list[float],
     cluster_id: int,
     match_count: int = 5,
-    threshold: float = 0.40,
+    threshold: float = 0.50,
 ) -> dict[str, Any]:
 
     if len(embedding) != 512:
@@ -195,23 +195,21 @@ def get_embeddings_registered():
     return all_embeddings if all_embeddings else None
 
 def save_clusters(cluster_map: dict):
-    BATCH_SIZE = 500  # 10,838 registros → 22 llamadas HTTP total
+    BATCH_SIZE = 500
     items = list(cluster_map.items())
     total = len(items)
 
-    print(f"Guardando {total} clusters en {ceil(total / BATCH_SIZE)} lotes...")
+    print(f"Guardando {total} clusters en {(total / BATCH_SIZE)} lotes...")
 
     for i in range(0, total, BATCH_SIZE):
         batch = items[i:i + BATCH_SIZE]
 
-        rows = [
-            {"id": embedding_id, "cluster_id": cluster_id}
-            for embedding_id, cluster_id in batch
+        payload = [
+            {"id": eid, "cluster_id": cid}
+            for eid, cid in batch
         ]
 
-        supabase.table("face_embeddings") \
-            .upsert(rows, on_conflict="id") \
-            .execute()
+        supabase.rpc("bulk_update_clusters", {"payload": payload}).execute()
 
         print(f"Progreso: {min(i + BATCH_SIZE, total)}/{total}")
 

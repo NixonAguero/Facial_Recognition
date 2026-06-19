@@ -7,7 +7,7 @@ HYBRID = 'hybrid'
 STANDARD = 'standard'
 
 # Filtro de calidad
-MIN_CONFIDENCE = 0.4
+MIN_CONFIDENCE = 0.5
 MIN_SHARPNESS = 30.0
 
 
