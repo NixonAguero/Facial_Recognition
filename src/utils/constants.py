@@ -28,3 +28,6 @@ MIN_NEIGHBORS_REDUCER = 15
 #Arcface
 MIN_HEIGHT = 112
 MIN_WIDTH = 112
+
+# Calidad detector de anomalias
+THRESHOLD_ANOMALY = 0.1

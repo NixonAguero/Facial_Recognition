@@ -19,6 +19,7 @@ from src.utils.normalizer import (
     l2_normalize_embedding,
 )
 from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
+from src.engine.anomaly_detector import AnomalyDetector
 
 class FacePipelineError(RuntimeError):
     pass
@@ -117,20 +118,21 @@ def save_registration(
 def sign_up(
     *,
     images: list[Any],
-    filenames: list[str],
+    filenames: list[str] | None = None,    # ahora es opcional
     full_name: str,
     external_code: str,
     enrollment_strategy: str,
 ) -> dict[str, Any]:
-    """Register one person using one or more face images."""
 
     if not images:
         raise FacePipelineError("Debe enviar al menos una imagen.")
 
+    # Si no vienen filenames, genera nombres genéricos
+    if filenames is None:
+        filenames = [f"camera_capture_{i}.jpg" for i in range(len(images))]
+
     if len(images) != len(filenames):
-        raise FacePipelineError(
-            "Cada imagen debe tener un nombre de archivo."
-        )
+        raise FacePipelineError("Cada imagen debe tener un nombre de archivo.")
 
     samples = []
 
@@ -156,14 +158,13 @@ def sign_up(
             )
 
         face = faces[0]
-
         crop = face["crop"]
 
-        height, weight = crop.shape[:2]
-        if height < MIN_HEIGHT and weight < MIN_WIDTH:
-            print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
-            failed_detection += 1
-            return None
+        height, width = crop.shape[:2]
+        if height < MIN_HEIGHT and width < MIN_WIDTH:
+            raise FacePipelineError(
+                "El recorte tiene dimensiones menores a las permitidas."
+            )
 
         embedding = generate_arcface_embedding(face["crop"])
 
@@ -218,6 +219,7 @@ def sign_in(
     image: Any,
     threshold: float | None = None,
     match_count: int = 5,
+    anomaly_detector: Any
 ) -> dict[str, Any]:
     """Identify a person from one face image."""
 
@@ -256,7 +258,9 @@ def sign_in(
     except ValueError as error:
         raise FacePipelineError(str(error)) from error
 
-    log("Buscando coincidencias en la base de datos...")
+    if anomaly_detector.is_anomaly(embedding):
+        print("Se detecto una anomalia en el embedding producido, la imagen ingresada no es un rostro valido")
+        return None
 
     if threshold is None:
         result = match_face_embedding(

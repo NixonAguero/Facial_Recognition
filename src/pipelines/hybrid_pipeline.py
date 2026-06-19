@@ -11,6 +11,11 @@ import numpy as np
 from src.database.face_repository import match_face_embedding_by_cluster
 from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 from src.utils.capture_frame import capture_frame
+from src.engine.anomaly_detector import AnomalyDetector
+from src.utils.normalizer import (
+    calculate_embedding_centroid,
+    l2_normalize_embedding,
+)
 
 def sign_in(
     *,
@@ -49,8 +54,18 @@ def sign_in(
         return None
 
     embedding = generate_arcface_embedding(crop)
-    print(f"Embeggind producido: {embedding}")
-    embedding_reduced = umap_reducer(embedding)
+
+    try:
+        normalized_embedding = l2_normalize_embedding(embedding)
+    except ValueError as error:
+        raise FacePipelineError(str(error)) from error
+
+    if anomaly_detector.is_anomaly(normalized_embedding):
+        print("Se detecto una anomalia en el embedding producido, la imagen ingresada no es un rostro valido")
+        return None
+
+    print(f"Embeggind producido: {normalized_embedding}")
+    embedding_reduced = umap_reducer(normalized_embedding)
     print(f"Embedding reducido {embedding_reduced}")
 
     embedding_reduced = np.array(embedding_reduced)

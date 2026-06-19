@@ -31,9 +31,10 @@ def verify_user(
     if args.method == HYBRID:
         return hybrid_pipeline.sign_in(
             image=image,
-            anomaly_detector=anomaly_detector,
+            anomaly_detector=anomaly_detector
         )
 
     return standard_pipeline.sign_in(
         image=image,
+        anomaly_detector=anomaly_detector
     )

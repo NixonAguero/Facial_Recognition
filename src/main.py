@@ -3,21 +3,21 @@ from pathlib import Path
 
 from src.api import register, verify
 from src.utils import args as cli_args
-from src.utils.constants import AUTOENCODER_MODEL_PATH, HYBRID, SINGUP
+from src.utils.constants import AUTOENCODER_MODEL_PATH, HYBRID, SINGUP, THRESHOLD_ANOMALY
 from src.engine.anomaly_detector import AnomalyDetector
 from src.utils.logger import log
 
 def run(args):
     anomaly_detector = None
-    if args.method == HYBRID:
-        log("Cargando autoencoder...")
-        if not Path(AUTOENCODER_MODEL_PATH).is_file():
-            raise FileNotFoundError(
-                f"No se encontro el autoencoder: {AUTOENCODER_MODEL_PATH}"
-            )
+    
+    log("Cargando autoencoder...")
+    if not Path(AUTOENCODER_MODEL_PATH).is_file():
+        raise FileNotFoundError(
+            f"No se encontro el autoencoder: {AUTOENCODER_MODEL_PATH}"
+        )
 
-        anomaly_detector = AnomalyDetector.load(AUTOENCODER_MODEL_PATH)
-        log("Autoencoder listo.")
+    anomaly_detector = AnomalyDetector.load(AUTOENCODER_MODEL_PATH, threshold=THRESHOLD_ANOMALY)
+    log("Autoencoder listo.")
 
     if args.action == SINGUP:
         return register.register_user(args, anomaly_detector)
