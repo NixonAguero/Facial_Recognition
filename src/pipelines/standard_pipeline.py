@@ -23,7 +23,6 @@ from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
 class FacePipelineError(RuntimeError):
     pass
 
-
 def save_registration(
     *,
     full_name: str,

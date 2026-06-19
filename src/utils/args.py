@@ -15,12 +15,12 @@ def parse_args() -> argparse.Namespace:
         choices=["hybrid", "standard"],
         help="Recognition pipeline to use.",
     )
-    parser.add_argument(
-        "--image-path",
-        required=True,
-        nargs="+",
-        help="One or more face image paths.",
-    )
+    # parser.add_argument(
+    #     "--image-path",
+    #     required=True,
+    #     nargs="+",
+    #     help="One or more face image paths.",
+    # )
     parser.add_argument(
         "--enrollment-strategy",
         choices=["multi", "centroid"],
@@ -42,7 +42,7 @@ def parse_args() -> argparse.Namespace:
             parser.error("--full-name is required for sign-up.")
         if not args.external_code:
             parser.error("--external-code is required for sign-up.")
-    elif len(args.image_path) != 1:
-        parser.error("sign-in requires exactly one --image-path.")
+    #elif len(args.image_path) != 1:
+        #parser.error("sign-in requires exactly one --image-path.")
 
     return args

@@ -7,20 +7,23 @@ from src.pipelines import hybrid_pipeline, standard_pipeline
 from src.utils.logger import log
 
 from src.utils.constants import HYBRID
-
+from src.utils.capture_frame import capture_frame
 
 def verify_user(
     args: Any,
     anomaly_detector: Any | None = None,
 ) -> dict[str, Any]:
-    raw_path = (
-        args.image_path[0]
-        if isinstance(args.image_path, list)
-        else args.image_path
-    )
-    image_path = Path(raw_path)
-    log(f"Leyendo imagen de verificación: {image_path}")
-    image = cv2.imread(str(image_path))
+
+    # raw_path = (
+    #     args.image_path[0]
+    #     if isinstance(args.image_path, list)
+    #     else args.image_path
+    # )
+    # image_path = Path(raw_path)
+    # log(f"Leyendo imagen de verificación: {image_path}")
+    # image = cv2.imread(str(image_path))
+
+    image = capture_frame()
 
     if image is None:
         raise ValueError("No se pudo leer la imagen.")

@@ -9,6 +9,8 @@ from src.utils.logger import log
 import cv2
 import numpy as np
 from src.database.face_repository import match_face_embedding_by_cluster
+from src.utils.constants import (MIN_HEIGHT, MIN_WIDTH)
+from src.utils.capture_frame import capture_frame
 
 def sign_in(
     *,
@@ -17,8 +19,34 @@ def sign_in(
     threshold: float | None = None,
     match_count: int = 5,
 ) -> dict[str, Any]:
+
+    if image is None:
+        print("No hay imagen que detectar")
+        return None
+
     faces = detect_faces(image)
+
+    try:
+        faces = detect_faces(image)
+    except Exception as error:
+        error_detail = str(error).splitlines()[0]
+        raise FacePipelineError(
+            f"RetinaFace no pudo procesar la imagen: {error_detail}"
+        ) from error
+
+    if not faces:
+        raise FacePipelineError("No se detecto un rostro valido.")
+
+    if len(faces) > 1:
+        raise FacePipelineError("Se detecto mas de un rostro.")
+
     crop = faces[0]["crop"]
+
+    height, weight = crop.shape[:2]
+    if height < MIN_HEIGHT and weight < MIN_WIDTH:
+        print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
+        failed_detection += 1
+        return None
 
     embedding = generate_arcface_embedding(crop)
     print(f"Embeggind producido: {embedding}")

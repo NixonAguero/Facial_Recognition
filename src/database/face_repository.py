@@ -54,7 +54,7 @@ def save_face_embedding(
 def match_face_embedding(
     embedding: list[float],
     match_count: int = 5,
-    threshold: float = 0.50,
+    threshold: float = 0.60,
 ) -> dict[str, Any]:
     """
     Searches for the closest face embedding in Supabase.
@@ -95,7 +95,7 @@ def match_face_embedding_by_cluster(
     embedding: list[float],
     cluster_id: int,
     match_count: int = 5,
-    threshold: float = 0.50,
+    threshold: float = 0.60,
 ) -> dict[str, Any]:
 
     if len(embedding) != 512:

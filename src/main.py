@@ -7,7 +7,6 @@ from src.utils.constants import AUTOENCODER_MODEL_PATH, HYBRID, SINGUP
 from src.engine.anomaly_detector import AnomalyDetector
 from src.utils.logger import log
 
-
 def run(args):
     anomaly_detector = None
     if args.method == HYBRID:
