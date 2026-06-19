@@ -168,19 +168,33 @@ def get_profile_by_external_code(external_code: str):
     return None
 
 def get_embeddings_registered():
+    all_embeddings = []
+    page_size = 1000
+    offset = 0
 
-    response = (
-        supabase
-        .table("face_embeddings")
-        .select("id, embedding") 
-        .eq("is_active", True)
-        .execute()
-    )
+    while True:
+        response = (
+            supabase
+            .table("face_embeddings")
+            .select("id, embedding")
+            .eq("is_active", True)
+            .range(offset, offset + page_size - 1)
+            .execute()
+        )
 
-    if not response.data:
-        return None
+        if not response.data:
+            break
 
-    return response.data
+        all_embeddings.extend(response.data)
+
+        if len(response.data) < page_size:
+            break
+
+        offset += page_size
+
+    return all_embeddings if all_embeddings else None
+
+
 
 def save_clusters(cluster_map):
 

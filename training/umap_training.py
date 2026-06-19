@@ -1,8 +1,10 @@
+import ast
 import os
 import sys
 import cv2
 import numpy as np
 from pathlib import Path
+import umap
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(PROJECT_ROOT)
@@ -10,6 +12,8 @@ sys.path.append(PROJECT_ROOT)
 from src.engine.ArcFace import generate_arcface_embedding
 from src.engine.umap_reducer import train_and_save_umap
 from src.engine.RetinaFace import detect_faces
+
+from src.database.face_repository import (get_embeddings_registered, save_clusters)
 
 def get_best_face_crop(image_path: str) -> np.ndarray | None:
 
@@ -41,7 +45,7 @@ def get_image_paths() -> list[str]:
         print(f"Error: Dataset not found at {dataset_dir}")
         sys.exit(1)
 
-    extensions = ["*.jpg", "*.jpeg", "*.png"]
+    extensions = [".jpg", ".jpeg", "*.png"]
     images_paths = []
 
     for ext in extensions:
@@ -51,44 +55,19 @@ def get_image_paths() -> list[str]:
 
     return images_paths
 
+def parse_embedding(emb):
+    if isinstance(emb, str):
+        return ast.literal_eval(emb)
+    return emb
+
 if __name__ == "__main__":
+    collected_embeddings = get_embeddings_registered()
+    print(f"Embeddings obtenidos de la base de datos {len(collected_embeddings)}")
+    embeddings_numeric = []
+    for item in collected_embeddings:
+        parsed_val = parse_embedding(item["embedding"])
+        embeddings_numeric.append(parsed_val)
 
-    all_image_paths = get_image_paths()  
-    print(f"Total images found: {len(all_image_paths)}")
+    embeddings_matrix = np.array(embeddings_numeric, dtype=np.float32)
 
-    collected_embeddings = []
-    failed_detection = 0
-    failed_embedding = 0
-
-    for i, image_path in enumerate(all_image_paths):
-        if i % 500 == 0:
-            print(
-                f"Progress: {i}/{len(all_image_paths)}"
-                f" | Embeddings: {len(collected_embeddings)}"
-                f" | Failed detection: {failed_detection}"
-                f" | Failed embedding: {failed_embedding}"
-            )
-
-        crop = get_best_face_crop(image_path)
-
-        if crop is None:
-            failed_detection += 1
-            continue
-
-        embedding_vector = generate_arcface_embedding(crop)
-
-        if embedding_vector is None:
-            failed_embedding += 1
-            continue
-
-        collected_embeddings.append(embedding_vector)
-
-    print(f"\n{'='*50}")
-    print(f"Total images processed : {len(all_image_paths)}")
-    print(f"Embeddings collected   : {len(collected_embeddings)}")
-    print(f"Failed detection       : {failed_detection}")
-    print(f"Failed embedding       : {failed_embedding}")
-    print(f"Success rate           : {len(collected_embeddings)/len(all_image_paths)*100:.1f}%")
-    print(f"{'='*50}")
-
-    train_and_save_umap(collected_embeddings)
+    train_and_save_umap(embeddings_matrix)  

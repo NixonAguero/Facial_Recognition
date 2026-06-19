@@ -53,11 +53,12 @@ def train_and_save_hdbscan(
 
     print("Fitting HDBSCAN...")
     clusterer = hdbscan.HDBSCAN(
-        min_cluster_size=2,
-        min_samples=1,
+        min_cluster_size=10,
+        min_samples=5,
         metric="euclidean",
-        cluster_selection_method="leaf",
+        cluster_selection_method="eom",
         prediction_data=True,
+        allow_single_cluster=False,
     )
 
     labels = clusterer.fit_predict(embeddings)

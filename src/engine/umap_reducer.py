@@ -2,6 +2,7 @@ import os
 import joblib
 import numpy as np
 from scipy.spatial.distance import cosine as scipy_cosine
+import umap
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 MODEL_PATH = os.path.join(PROJECT_ROOT, "weights", "umap_faces.joblib")

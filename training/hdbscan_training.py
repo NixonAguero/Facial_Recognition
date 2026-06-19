@@ -12,9 +12,6 @@ from src.database.face_repository import (get_embeddings_registered, save_cluste
 from src.engine.umap_reducer import umap_reducer
 from src.engine.hdbscan import train_and_save_hdbscan
 import numpy as np
-from src.utils.normalizer import (
-    l2_normalize_embedding
-)
 
 def embedding_reducer(embeddings_to_reduce):
 
@@ -33,6 +30,53 @@ def parse_embedding(emb):
         return ast.literal_eval(emb)
     return emb  
 
+from collections import Counter
+import numpy as np
+
+
+def analyze_cluster_distribution(cluster_map: dict):
+    labels = list(cluster_map.values())
+    counts = Counter(labels)
+
+    total = len(labels)
+    noise_count = counts.get(-1, 0)
+    clustered_count = total - noise_count
+
+    cluster_sizes = [
+        count for label, count in counts.items()
+        if label != -1
+    ]
+
+    print("\n==============================")
+    print("HDBSCAN DISTRIBUTION ANALYSIS")
+    print("==============================")
+
+    print(f"Total embeddings: {total}")
+    print(f"Clustered embeddings: {clustered_count}")
+    print(f"Noise embeddings (-1): {noise_count}")
+
+    if total > 0:
+        print(f"Clustered percentage: {(clustered_count / total) * 100:.2f}%")
+        print(f"Noise percentage: {(noise_count / total) * 100:.2f}%")
+
+    print(f"Number of clusters excluding -1: {len(cluster_sizes)}")
+
+    if cluster_sizes:
+        print(f"Smallest cluster size: {min(cluster_sizes)}")
+        print(f"Largest cluster size: {max(cluster_sizes)}")
+        print(f"Average cluster size: {np.mean(cluster_sizes):.2f}")
+        print(f"Median cluster size: {np.median(cluster_sizes):.2f}")
+
+        largest_cluster_percentage = (max(cluster_sizes) / total) * 100
+        print(f"Largest cluster percentage: {largest_cluster_percentage:.2f}%")
+
+    print("\nCluster sizes:")
+    for label, count in sorted(counts.items(), key=lambda x: x[0]):
+        percentage = (count / total) * 100
+        print(f"  Cluster {label}: {count} embeddings ({percentage:.2f}%)")
+
+    print("==============================\n")
+
 if __name__ == "__main__":
 
     embeddings_registered = get_embeddings_registered()
@@ -41,12 +85,7 @@ if __name__ == "__main__":
         sys.exit(1) 
 
     embedding_ids = [row["id"] for row in embeddings_registered]
-
-    embeddings_to_arrays = []
-    for embedding in embeddings_registered:
-        parsed = parse_embedding(embedding["embedding"])
-        normalized = l2_normalize_embedding(parsed)
-        embeddings_to_arrays.append(np.array(normalized))
+    embeddings_to_arrays = np.array([parse_embedding(row["embedding"]) for row in embeddings_registered])
 
     embeddings_reduced = embedding_reducer(embeddings_to_arrays)
     embeddings_reduced = np.array(embeddings_reduced)
@@ -60,9 +99,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     print(f"cluster map {cluster_map}")
-
+    analyze_cluster_distribution(cluster_map)
     save_clusters(cluster_map)
-
+    
     
 
 # import cv2

@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 from deepface import DeepFace
 
-from src.utils.constants import (
+from utils.constants import (
     MIN_CONFIDENCE,
     MIN_SHARPNESS,
 )
