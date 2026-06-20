@@ -31,3 +31,6 @@ MIN_WIDTH = 112
 
 # Calidad detector de anomalias
 THRESHOLD_ANOMALY = 0.1
+
+# Confianza de similitud en ingreso
+THRESHOLD_SING_ING = 0.5
