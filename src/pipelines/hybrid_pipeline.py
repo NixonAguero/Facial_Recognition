@@ -29,8 +29,6 @@ def sign_in(
         print("No hay imagen que detectar")
         return None
 
-    faces = detect_faces(image)
-
     try:
         faces = detect_faces(image)
     except Exception as error:
@@ -50,7 +48,6 @@ def sign_in(
     height, weight = crop.shape[:2]
     if height < MIN_HEIGHT and weight < MIN_WIDTH:
         print("Se detecto un recorte con dimensiones mínimas a las permitidas para generar un embedding")
-        failed_detection += 1
         return None
 
     embedding = generate_arcface_embedding(crop)
